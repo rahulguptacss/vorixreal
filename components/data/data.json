@@ -1,0 +1,570 @@
+{
+  "common": {
+    "Header": {
+      "logo": "/logo/logo.png",
+      "logo_text": "VORIX",
+      "logo_subtext": "REAL ESTATE",
+      "links": [
+        { "name": "Home", "href": "/" },
+        { "name": "About Us", "href": "/about" },
+        { "name": "Services", "href": "/services" },
+        { "name": "Properties", "href": "/properties" },
+        { "name": "Blog", "href": "/blog" },
+        { "name": "Contact Us", "href": "/contact" }
+      ],
+      "button_text": "Contact Us",
+      "button_link": "/contact",
+      "menu_aria_label": "Open navigation menu",
+      "close_aria_label": "Close navigation menu"
+    },
+    "Footer": {
+      "logo": "/logo/white-logo.png",
+      "logo_text": "VORIX REAL ESTATE",
+      "description": "Premium real estate solutions, tailored to your lifestyle and investment goals. We connect people with exceptional spaces and long-term opportunities.",
+      "socials": [
+        { "name": "Instagram", "href": "https://instagram.com", "icon": "instagram", "aria_label": "Instagram profile" },
+        { "name": "LinkedIn", "href": "https://linkedin.com", "icon": "linkedin", "aria_label": "LinkedIn profile" },
+        { "name": "Facebook", "href": "https://facebook.com", "icon": "facebook", "aria_label": "Facebook profile" },
+        { "name": "YouTube", "href": "https://youtube.com", "icon": "youtube", "aria_label": "YouTube channel" }
+      ],
+      "pages_title": "Pages",
+      "pages_links": [
+        { "name": "Home", "href": "/" },
+        { "name": "About Us", "href": "/about" },
+        { "name": "Properties", "href": "/properties" },
+        { "name": "Insights", "href": "/blog" },
+        { "name": "Contact", "href": "/contact" }
+      ],
+      "properties_title": "Properties",
+      "properties_links": [
+        { "name": "Residential Properties", "href": "/properties" },
+        { "name": "Commercial Properties", "href": "/properties" },
+        { "name": "Luxury Villas", "href": "/properties" },
+        { "name": "Apartments", "href": "/properties" },
+        { "name": "Investment Opportunities", "href": "/properties" },
+        { "name": "Off-Plan Properties", "href": "/properties" }
+      ],
+      "contact_title": "Contact Information",
+      "contact_items": [
+        { "icon": "map", "label": "Our Office", "text": "88 Grand Avenue, Suite 1200\nNew York, NY 10022", "href": "" },
+        { "icon": "phone", "label": "Phone Number", "text": "+1 (000) 123-4567", "href": "tel:+10001234567" },
+        { "icon": "mail", "label": "Email Address", "text": "contact@vorixrealestate.com", "href": "mailto:contact@vorixrealestate.com" }
+      ],
+      "copyright": "Copyright © 2026. All rights reserved. Powered by Lestow"
+    },
+    "BackToTop": {
+      "aria_label": "Back to top of page"
+    }
+  },
+  "categories": {
+    "RealEstate": {
+      "templateComponents": {
+        "template-1": {
+          "pages": {
+            "home": {
+              "title": "Vorix Real Estate | Find Your Dream Home",
+              "pageName": "Home",
+              "metadata": {
+                "title": "Vorix Real Estate | Find Your Dream Home",
+                "description": "Discover luxury villas, premium residences and office spaces in prime locations with Vorix Real Estate — trusted buying, selling, leasing and investment services."
+              },
+              "components": [
+                { "key": "HeroSection", "component": "Hero" },
+                { "key": "AboutSection", "component": "About" },
+                { "key": "ServicesSection", "component": "Services" },
+                { "key": "PropertiesSection", "component": "Properties" },
+                { "key": "TestimonialsSection", "component": "Testimonials" },
+                { "key": "BlogSection", "component": "Blog" }
+              ]
+            },
+            "not_found": {
+              "code": "404",
+              "badge": "Page Not Found",
+              "title": "This Address Doesn't Exist",
+              "description": "The page you're looking for may have moved or is no longer available.",
+              "back_home": {
+                "text": "Back to Home",
+                "href": "/"
+              }
+            },
+            "about": {
+              "title": "About Us | Vorix Real Estate",
+              "pageName": "About Us",
+              "metadata": {
+                "title": "About Us | Vorix Real Estate",
+                "description": "Learn about Vorix Real Estate — 25+ years of creating spaces that inspire living, 150+ properties sold and a client-first approach."
+              },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "AboutSection", "component": "About" },
+                { "key": "ServicesSection", "component": "Services" },
+                { "key": "TestimonialsSection", "component": "Testimonials" }
+              ]
+            },
+            "services": {
+              "title": "Services | Vorix Real Estate",
+              "pageName": "Our Services",
+              "metadata": {
+                "title": "Our Services | Vorix Real Estate",
+                "description": "Property buying assistance, selling services, rental & leasing solutions and investment consulting from Vorix Real Estate."
+              },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "ServicesSection", "component": "Services" },
+                { "key": "PropertiesSection", "component": "Properties" },
+                { "key": "TestimonialsSection", "component": "Testimonials" }
+              ]
+            },
+            "properties": {
+              "title": "Properties | Vorix Real Estate",
+              "pageName": "Properties",
+              "metadata": {
+                "title": "Properties | Vorix Real Estate - Exceptional Homes in Prime Locations",
+                "description": "Browse luxury villas, premium residences, apartments and office spaces in prime locations curated by Vorix Real Estate."
+              },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "PropertiesSection", "component": "Properties" }
+              ]
+            },
+            "blog": {
+              "title": "Blog | Vorix Real Estate",
+              "pageName": "Our Blog",
+              "metadata": {
+                "title": "Blog | Vorix Real Estate - Insights Shaping Modern Real Estate",
+                "description": "Real estate market trends, home buying tips, investment strategies and modern living insights from the Vorix team."
+              },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "BlogSection", "component": "Blog" }
+              ]
+            },
+            "blog_detail": {
+              "title": "Blog Detail | Vorix Real Estate",
+              "pageName": "Blog Detail",
+              "metadata": {
+                "title": "Blog Detail | Vorix Real Estate",
+                "description": "Read the latest real estate insights from Vorix Real Estate."
+              },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "BlogDetailSection", "component": "BlogDetail" }
+              ]
+            },
+            "contact": {
+              "title": "Contact Us | Vorix Real Estate",
+              "pageName": "Contact Us",
+              "metadata": {
+                "title": "Contact Us | Vorix Real Estate",
+                "description": "Get in touch with Vorix Real Estate to buy, sell, lease or invest in premium properties."
+              },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "ContactSection", "component": "Contact" }
+              ]
+            }
+          },
+          "sections": {
+            "breadcrumb": {
+              "background_image": "/hero/hero.jpg",
+              "background_alt": "Modern luxury villa with pool at twilight",
+              "items": [{ "name": "Home", "href": "/" }]
+            },
+            "hero": {
+              "eyebrow": "Discover Excellence",
+              "title_line1": "Find Your",
+              "title_line2": "Dream Home",
+              "description": "Discover premium properties in prime locations, designed for modern living. Whether you're buying, selling or investing, we make every step simple and rewarding.",
+              "cta_text": "Explore Properties",
+              "cta_link": "/properties",
+              "image": "/hero/hero-new.png",
+              "image_alt": "Modern luxury villa with palm trees and reflecting pool at dusk"
+            },
+            "about": {
+              "eyebrow": "Our Commitment",
+              "side_text": "Building Spaces for\na Better Tomorrow",
+              "title_regular": "Creating Spaces",
+              "title_highlight": "That Inspire Living",
+              "description_paragraphs": [
+                "We develop premium residential and commercial properties that blend modern design, strategic locations, and long-term value.",
+                "Our focus is on creating exceptional spaces where people can live, work, and grow with confidence."
+              ],
+              "button_text": "Learn More",
+              "button_link": "/about",
+              "image_main": "/about/about-1.jpg",
+              "image_main_alt": "Modern luxury house with glass facade glowing at dusk",
+              "image_secondary": "/about/interior.jpg",
+              "image_secondary_alt": "Luxury penthouse living room with city skyline view",
+              "tags": ["Modern", "Elegant", "Spacious", "Premium"],
+              "stats": [
+                { "value": "25+", "label": "Prime Locations" },
+                { "value": "150+", "label": "Happy Families" },
+                { "value": "10+", "label": "Years of Trust" }
+              ]
+            },
+            "services": {
+              "eyebrow": "Our Services",
+              "title_regular": "Comprehensive Real Estate",
+              "title_highlight": "Solutions for Every Need",
+              "subtitle": "From your first viewing to the final signature, our specialists deliver end-to-end support tailored to your goals.",
+              "read_more_text": "Learn More",
+              "items": [
+                {
+                  "id": "buying",
+                  "icon": "house",
+                  "title": "Property Buying Assistance",
+                  "description": "We shortlist, inspect and negotiate the best homes that match your budget and lifestyle.",
+                  "href": "/services"
+                },
+                {
+                  "id": "selling",
+                  "icon": "handshake",
+                  "title": "Property Selling Services",
+                  "description": "Strategic pricing, premium marketing and qualified buyers to close your sale faster.",
+                  "href": "/services"
+                },
+                {
+                  "id": "rental",
+                  "icon": "key",
+                  "title": "Rental & Leasing Solutions",
+                  "description": "Hassle-free leasing with verified tenants, clear agreements and ongoing management.",
+                  "href": "/services"
+                },
+                {
+                  "id": "investment",
+                  "icon": "trending",
+                  "title": "Investment Consulting Services",
+                  "description": "Data-driven advice to build a profitable property portfolio with long-term growth.",
+                  "href": "/services"
+                }
+              ]
+            },
+            "properties": {
+              "eyebrow": "Featured Properties",
+              "title_regular": "Exceptional Homes in",
+              "title_highlight": "Prime Locations",
+              "description": "Explore a handpicked selection of premium residential and commercial properties in highly sought-after locations.",
+              "button_text": "View All Properties",
+              "button_link": "/properties",
+              "view_aria_label": "View property",
+              "items": [
+                {
+                  "id": "luxury-villas",
+                  "category": "Residential",
+                  "title": "Luxury Villas",
+                  "image": "/properties/luxury-villa.jpg",
+                  "alt": "Luxury white villa with pool at golden hour",
+                  "href": "/properties"
+                },
+                {
+                  "id": "premium-residences",
+                  "category": "Apartments",
+                  "title": "Premium Residences",
+                  "image": "/properties/premium-residence.jpg",
+                  "alt": "Premium residence with stone and wood facade at twilight",
+                  "href": "/properties"
+                },
+                {
+                  "id": "office-spaces",
+                  "category": "Commercial",
+                  "title": "Office Spaces",
+                  "image": "/properties/office-space.jpg",
+                  "alt": "Modern glass office tower",
+                  "href": "/properties"
+                },
+                {
+                  "id": "waterfront-homes",
+                  "category": "Residential",
+                  "title": "Waterfront Homes",
+                  "image": "/hero/hero.jpg",
+                  "alt": "Modern villa with infinity pool at night",
+                  "href": "/properties"
+                },
+                {
+                  "id": "family-houses",
+                  "category": "Townhouses",
+                  "title": "Family Houses",
+                  "image": "/about/about-1.jpg",
+                  "alt": "Three-story modern family home",
+                  "href": "/properties"
+                },
+                {
+                  "id": "holiday-retreats",
+                  "category": "Vacation",
+                  "title": "Holiday Retreats",
+                  "image": "/about/about-2.jpg",
+                  "alt": "Minimalist white retreat with pool at sunset",
+                  "href": "/properties"
+                }
+              ]
+            },
+            "testimonials": {
+              "eyebrow": "Client Testimonials",
+              "title_regular": "Trusted by",
+              "title_highlight": "Our Valued Clients",
+              "intro": "Our clients value trust, transparency, and a seamless experience. Here's what they say about working with Vorix for their real estate journey.",
+              "more_text": "More Testimonials",
+              "more_link": "/about",
+              "prev_aria_label": "Previous testimonial",
+              "next_aria_label": "Next testimonial",
+              "items": [
+                {
+                  "id": "rohan",
+                  "quote": "Vorix made the entire property buying process simple and stress-free. Their team understood our requirements, guided us at every step, and helped us find the perfect home in the right location. From site visits to paperwork, everything was transparent and on time, and we moved in without a single worry.",
+                  "author": "Rohan Mehta",
+                  "role": "Homeowner",
+                  "avatar": "/testimonials/client-1.jpg",
+                  "rating": 5,
+                  "image": "/about/about-2.jpg",
+                  "image_alt": "Modern villa with pool purchased by Rohan Mehta"
+                },
+                {
+                  "id": "priya",
+                  "quote": "Selling our family home felt overwhelming until we partnered with Vorix. Their pricing strategy, professional photography and targeted marketing brought multiple offers within just two weeks, well above our expectations. They handled every negotiation with care and kept us informed throughout the process.",
+                  "author": "Priya Sharma",
+                  "role": "Property Seller",
+                  "avatar": "/testimonials/client-2.jpg",
+                  "rating": 5,
+                  "image": "/properties/premium-residence.jpg",
+                  "image_alt": "Premium residence sold by Priya Sharma"
+                },
+                {
+                  "id": "kenji",
+                  "quote": "Their investment consulting helped me build a portfolio of three rental units in under a year. Clear market data, honest advice and constant support made every decision easier. Vorix also manages tenants and maintenance for me, so my properties generate steady income without taking up my time.",
+                  "author": "Kenji Tanaka",
+                  "role": "Real Estate Investor",
+                  "avatar": "/testimonials/client-3.jpg",
+                  "rating": 5,
+                  "image": "/blog/blog-3.jpg",
+                  "image_alt": "Luxury apartment building in Kenji Tanaka's portfolio"
+                },
+                {
+                  "id": "emma",
+                  "quote": "From the first viewing to handing over the keys, everything was handled professionally. Vorix found us a stunning waterfront villa that ticked every box on our list. Their team negotiated a great price, coordinated inspections and legal checks, and made the whole experience feel effortless.",
+                  "author": "Emma Collins",
+                  "role": "Villa Owner",
+                  "avatar": "/testimonials/client-4.jpg",
+                  "rating": 5,
+                  "image": "/properties/luxury-villa.jpg",
+                  "image_alt": "Waterfront luxury villa owned by Emma Collins"
+                },
+                {
+                  "id": "david",
+                  "quote": "We needed a modern office space for our growing team on a tight timeline. Vorix shortlisted the best options in just a few days, arranged viewings around our schedule and negotiated lease terms that saved us significantly. Our new workspace has truly boosted team morale and productivity.",
+                  "author": "David Okafor",
+                  "role": "Business Owner",
+                  "avatar": "/testimonials/client-5.jpg",
+                  "rating": 5,
+                  "image": "/properties/office-space.jpg",
+                  "image_alt": "Modern office building leased by David Okafor"
+                }
+              ]
+            },
+            "blog": {
+              "eyebrow": "Latest Insights",
+              "title_regular": "Insights Shaping",
+              "title_highlight": "Modern Real Estate",
+              "description": "Explore expert insights, market trends, and practical guides to help you make informed real estate decisions. Our articles bring you valuable perspectives on property, investment, and lifestyle.",
+              "button_text": "Explore All Articles",
+              "button_link": "/blog",
+              "read_more_text": "Read More",
+              "author_prefix": "By",
+              "homepage_count": 3,
+              "posts": [
+                {
+                  "id": "smart-living",
+                  "slug": "smart-living-is-the-new-future-of-homes",
+                  "title": "Smart Living Is the New Future of Homes",
+                  "category": "Lifestyle",
+                  "date": "Oct 12, 2026",
+                  "author": "Admin",
+                  "image": "/blog/blog-1.jpg",
+                  "alt": "Eco-friendly smart home with solar panels",
+                  "excerpt": "From solar roofs to connected security, discover how smart technology is redefining comfort and value in modern homes."
+                },
+                {
+                  "id": "design-trends",
+                  "slug": "design-elements-defining-modern-homes",
+                  "title": "Design Elements Defining Modern Homes",
+                  "category": "Architecture",
+                  "date": "Sep 28, 2026",
+                  "author": "Admin",
+                  "image": "/blog/blog-2.jpg",
+                  "alt": "Contemporary dark facade house with reflecting pool",
+                  "excerpt": "Open layouts, natural light and seamless indoor-outdoor living — the architectural features buyers love most right now."
+                },
+                {
+                  "id": "market-outlook",
+                  "slug": "luxury-real-estate-market-outlook-2026",
+                  "title": "Luxury Real Estate Market Outlook 2026",
+                  "category": "Market Trends",
+                  "date": "Sep 15, 2026",
+                  "author": "Admin",
+                  "image": "/blog/blog-3.jpg",
+                  "alt": "Luxury apartment building in upscale neighborhood",
+                  "excerpt": "Interest rates, demand hotspots and pricing forecasts — everything you need to know before investing this year."
+                },
+                {
+                  "id": "first-home",
+                  "slug": "first-time-buyer-guide-to-premium-homes",
+                  "title": "A First-Time Buyer's Guide to Premium Homes",
+                  "category": "Buying Tips",
+                  "date": "Aug 30, 2026",
+                  "author": "Admin",
+                  "image": "/properties/premium-residence.jpg",
+                  "alt": "Premium residence at twilight",
+                  "excerpt": "Budgeting, inspections and negotiation — a step-by-step roadmap to confidently buying your first luxury property."
+                },
+                {
+                  "id": "office-investment",
+                  "slug": "why-office-spaces-are-a-smart-investment",
+                  "title": "Why Office Spaces Are a Smart Investment",
+                  "category": "Investment",
+                  "date": "Aug 18, 2026",
+                  "author": "Admin",
+                  "image": "/properties/office-space.jpg",
+                  "alt": "Modern glass office building",
+                  "excerpt": "Hybrid work has reshaped commercial real estate. Here's where the new opportunities lie for savvy investors."
+                },
+                {
+                  "id": "staging-tips",
+                  "slug": "home-staging-tips-to-sell-faster",
+                  "title": "Home Staging Tips to Sell Faster",
+                  "category": "Selling Tips",
+                  "date": "Aug 02, 2026",
+                  "author": "Admin",
+                  "image": "/properties/luxury-villa.jpg",
+                  "alt": "Staged luxury villa with pool",
+                  "excerpt": "Small, strategic upgrades that help buyers fall in love with your property — and raise your final sale price."
+                }
+              ]
+            },
+            "blog_details": {
+              "smart-living-is-the-new-future-of-homes": {
+                "category": "Lifestyle",
+                "date": "Oct 12, 2026",
+                "author": "Vorix Editorial Team",
+                "title": "Smart Living Is the New Future of Homes",
+                "hero_image": "/blog/blog-1.jpg",
+                "hero_alt": "Eco-friendly smart home with solar panels",
+                "intro": "Smart technology has moved from a luxury add-on to an expectation. Today's buyers want homes that save energy, stay secure and adapt to the way they live.",
+                "quote": "A smart home isn't about gadgets — it's about giving you back time, comfort and peace of mind.",
+                "sections": [
+                  { "title": "Energy That Pays You Back", "paragraph": "Solar panels, battery storage and intelligent thermostats can cut utility bills dramatically while increasing resale value. Buyers increasingly compare homes by their long-term running costs." },
+                  { "title": "Security Without Compromise", "paragraph": "Connected cameras, smart locks and app-based monitoring let homeowners keep an eye on their property from anywhere — a feature that now ranks among the top requests from families." },
+                  { "title": "Designed Around Your Routine", "paragraph": "Automated lighting, climate zones and voice control create spaces that respond to you. The result is a home that feels effortless every single day." }
+                ]
+              },
+              "design-elements-defining-modern-homes": {
+                "category": "Architecture",
+                "date": "Sep 28, 2026",
+                "author": "Vorix Editorial Team",
+                "title": "Design Elements Defining Modern Homes",
+                "hero_image": "/blog/blog-2.jpg",
+                "hero_alt": "Contemporary dark facade house with reflecting pool",
+                "intro": "Modern architecture is all about clarity, light and connection. These are the design choices shaping the most sought-after homes on the market.",
+                "quote": "Great design disappears — what remains is how a space makes you feel.",
+                "sections": [
+                  { "title": "Floor-to-Ceiling Glass", "paragraph": "Expansive glazing floods interiors with daylight and frames the landscape like art, blurring the line between inside and out." },
+                  { "title": "Open, Flexible Layouts", "paragraph": "Kitchens, living and dining areas flow together, giving families room to gather while remaining adaptable for work and entertaining." },
+                  { "title": "Natural, Honest Materials", "paragraph": "Stone, timber and concrete add warmth and texture, aging beautifully and reducing long-term maintenance." }
+                ]
+              },
+              "luxury-real-estate-market-outlook-2026": {
+                "category": "Market Trends",
+                "date": "Sep 15, 2026",
+                "author": "Vorix Research Desk",
+                "title": "Luxury Real Estate Market Outlook 2026",
+                "hero_image": "/blog/blog-3.jpg",
+                "hero_alt": "Luxury apartment building in upscale neighborhood",
+                "intro": "The luxury segment continues to show resilience. Here's our take on where prices, demand and opportunities are heading this year.",
+                "quote": "In every market cycle, quality locations remain the strongest store of value.",
+                "sections": [
+                  { "title": "Demand Remains Strong", "paragraph": "Limited inventory in prime neighborhoods keeps competition high, particularly for move-in-ready homes with modern amenities." },
+                  { "title": "Rates and Affordability", "paragraph": "Stabilizing interest rates are bringing sidelined buyers back, with cash purchasers still accounting for a large share of luxury deals." },
+                  { "title": "Where to Look Next", "paragraph": "Emerging suburbs with strong infrastructure investment offer attractive entry points and solid appreciation potential." }
+                ]
+              },
+              "first-time-buyer-guide-to-premium-homes": {
+                "category": "Buying Tips",
+                "date": "Aug 30, 2026",
+                "author": "Vorix Advisory Team",
+                "title": "A First-Time Buyer's Guide to Premium Homes",
+                "hero_image": "/properties/premium-residence.jpg",
+                "hero_alt": "Premium residence at twilight",
+                "intro": "Buying your first premium home is exciting — and a big decision. This roadmap helps you move forward with confidence.",
+                "quote": "Preparation turns a stressful purchase into a rewarding milestone.",
+                "sections": [
+                  { "title": "Know Your Real Budget", "paragraph": "Factor in taxes, insurance, maintenance and association fees alongside your mortgage to understand the true monthly cost." },
+                  { "title": "Never Skip Inspections", "paragraph": "A thorough inspection protects your investment and often provides leverage during negotiation." },
+                  { "title": "Work With Specialists", "paragraph": "An experienced agent brings off-market access, pricing insight and negotiation skills that save time and money." }
+                ]
+              },
+              "why-office-spaces-are-a-smart-investment": {
+                "category": "Investment",
+                "date": "Aug 18, 2026",
+                "author": "Vorix Research Desk",
+                "title": "Why Office Spaces Are a Smart Investment",
+                "hero_image": "/properties/office-space.jpg",
+                "hero_alt": "Modern glass office building",
+                "intro": "Commercial real estate is evolving fast. Flexible, well-located office spaces are emerging as a compelling opportunity.",
+                "quote": "The office isn't dead — it's being redesigned for how people actually work.",
+                "sections": [
+                  { "title": "Flight to Quality", "paragraph": "Companies are consolidating into premium, amenity-rich buildings, driving demand for modern Class-A spaces." },
+                  { "title": "Stable, Long-Term Leases", "paragraph": "Commercial tenants typically sign multi-year leases, offering predictable income streams for investors." },
+                  { "title": "Flexible Workspace Demand", "paragraph": "Co-working and hybrid-ready layouts attract startups and enterprises alike, keeping occupancy strong." }
+                ]
+              },
+              "home-staging-tips-to-sell-faster": {
+                "category": "Selling Tips",
+                "date": "Aug 02, 2026",
+                "author": "Vorix Advisory Team",
+                "title": "Home Staging Tips to Sell Faster",
+                "hero_image": "/properties/luxury-villa.jpg",
+                "hero_alt": "Staged luxury villa with pool",
+                "intro": "First impressions sell homes. Thoughtful staging helps buyers picture their life in your space — and pay more for it.",
+                "quote": "Buyers don't purchase a house; they purchase the life they imagine inside it.",
+                "sections": [
+                  { "title": "Declutter and Depersonalize", "paragraph": "Clear surfaces and neutral décor make rooms feel larger and let buyers imagine their own belongings in place." },
+                  { "title": "Light Every Corner", "paragraph": "Open curtains, add warm lamps and replace dim bulbs so every room feels bright and welcoming in photos and viewings." },
+                  { "title": "Boost Curb Appeal", "paragraph": "Fresh landscaping, a clean entrance and outdoor lighting create a memorable first impression before buyers step inside." }
+                ]
+              }
+            },
+            "contact": {
+              "eyebrow": "Get In Touch",
+              "title_regular": "Let's Find Your",
+              "title_highlight": "Perfect Property",
+              "description": "Have a question or ready to start your property journey? Reach out and our specialists will get back to you within 24 hours.",
+              "info_cards": [
+                { "id": "address", "icon": "map", "title": "Our Office", "lines": ["245 Skyline Avenue, Suite 800", "New York, NY 10001"], "href": "" },
+                { "id": "phone", "icon": "phone", "title": "Call Us", "lines": ["+1 (555) 123-4567", "Mon - Sat, 9am - 7pm"], "href": "tel:+15551234567" },
+                { "id": "email", "icon": "mail", "title": "Email Us", "lines": ["hello@vorixrealestate.com", "sales@vorixrealestate.com"], "href": "mailto:hello@vorixrealestate.com" }
+              ],
+              "form": {
+                "title": "Send Us a Message",
+                "name_label": "Full Name",
+                "name_placeholder": "John Doe",
+                "email_label": "Email Address",
+                "email_placeholder": "john@example.com",
+                "phone_label": "Phone Number",
+                "phone_placeholder": "+1 (555) 000-0000",
+                "subject_label": "Interested In",
+                "subject_placeholder": "Select a service",
+                "subject_options": ["Buying a Property", "Selling a Property", "Rental & Leasing", "Investment Consulting"],
+                "message_label": "Message",
+                "message_placeholder": "Tell us about your requirements...",
+                "submit_text": "Send Message",
+                "success_message": "Thank you! Our team will contact you shortly."
+              },
+              "map": {
+                "title": "Vorix Real Estate office location",
+                "embed_url": "https://www.google.com/maps?q=Empire+State+Building,New+York&output=embed"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
