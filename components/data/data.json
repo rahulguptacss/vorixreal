@@ -1,54 +1,148 @@
 {
   "common": {
     "Header": {
-      "logo": "/logo/logo.png",
+      "logo": "/logo/logo.webp",
       "logo_text": "VORIX",
       "logo_subtext": "REAL ESTATE",
       "links": [
-        { "name": "Home", "href": "/" },
-        { "name": "About Us", "href": "/about" },
-        { "name": "Services", "href": "/services" },
-        { "name": "Properties", "href": "/properties" },
-        { "name": "Blog", "href": "/blog" },
-        { "name": "Contact Us", "href": "/contact" }
+        {
+          "name": "Home",
+          "href": "/"
+        },
+        {
+          "name": "About Us",
+          "href": "/about"
+        },
+        {
+          "name": "Team",
+          "href": "/team"
+        },
+        {
+          "name": "Services",
+          "href": "/services"
+        },
+        {
+          "name": "Properties",
+          "href": "/properties"
+        },
+        {
+          "name": "Blog",
+          "href": "/blog"
+        },
+        {
+          "name": "Contact Us",
+          "href": "/contact"
+        }
       ],
-      "button_text": "Contact Us",
-      "button_link": "/contact",
+      "button_text": "Enquire Now",
+      "button_link": "/enquiry-now",
       "menu_aria_label": "Open navigation menu",
       "close_aria_label": "Close navigation menu"
     },
     "Footer": {
-      "logo": "/logo/white-logo.png",
+      "logo": "/logo/white-logo.webp",
       "logo_text": "VORIX REAL ESTATE",
-      "description": "Premium real estate solutions, tailored to your lifestyle and investment goals. We connect people with exceptional spaces and long-term opportunities.",
+      "description": "Premium real estate solutions tailored to your unique lifestyle and long-term investment goals. With over 25 years of proven industry excellence, we connect individuals, families, and discerning investors with exceptional properties, prime developments, and rewarding opportunities worldwide.",
       "socials": [
-        { "name": "Instagram", "href": "https://instagram.com", "icon": "instagram", "aria_label": "Instagram profile" },
-        { "name": "LinkedIn", "href": "https://linkedin.com", "icon": "linkedin", "aria_label": "LinkedIn profile" },
-        { "name": "Facebook", "href": "https://facebook.com", "icon": "facebook", "aria_label": "Facebook profile" },
-        { "name": "YouTube", "href": "https://youtube.com", "icon": "youtube", "aria_label": "YouTube channel" }
+        {
+          "name": "Instagram",
+          "href": "https://instagram.com",
+          "icon": "instagram",
+          "aria_label": "Instagram profile"
+        },
+        {
+          "name": "LinkedIn",
+          "href": "https://linkedin.com",
+          "icon": "linkedin",
+          "aria_label": "LinkedIn profile"
+        },
+        {
+          "name": "Facebook",
+          "href": "https://facebook.com",
+          "icon": "facebook",
+          "aria_label": "Facebook profile"
+        },
+        {
+          "name": "YouTube",
+          "href": "https://youtube.com",
+          "icon": "youtube",
+          "aria_label": "YouTube channel"
+        }
       ],
       "pages_title": "Pages",
       "pages_links": [
-        { "name": "Home", "href": "/" },
-        { "name": "About Us", "href": "/about" },
-        { "name": "Properties", "href": "/properties" },
-        { "name": "Insights", "href": "/blog" },
-        { "name": "Contact", "href": "/contact" }
+        {
+          "name": "Home",
+          "href": "/"
+        },
+        {
+          "name": "About Us",
+          "href": "/about"
+        },
+        {
+          "name": "Team",
+          "href": "/team"
+        },
+        {
+          "name": "Services",
+          "href": "/services"
+        },
+        {
+          "name": "Blog",
+          "href": "/blog"
+        },
+        {
+          "name": "Contact Us",
+          "href": "/contact"
+        }
       ],
       "properties_title": "Properties",
       "properties_links": [
-        { "name": "Residential Properties", "href": "/properties" },
-        { "name": "Commercial Properties", "href": "/properties" },
-        { "name": "Luxury Villas", "href": "/properties" },
-        { "name": "Apartments", "href": "/properties" },
-        { "name": "Investment Opportunities", "href": "/properties" },
-        { "name": "Off-Plan Properties", "href": "/properties" }
+        {
+          "name": "Luxury Villas",
+          "href": "/properties/luxury-villas"
+        },
+        {
+          "name": "Premium Residences",
+          "href": "/properties/premium-residences"
+        },
+        {
+          "name": "Office Spaces",
+          "href": "/properties/office-spaces"
+        },
+        {
+          "name": "Waterfront Homes",
+          "href": "/properties/waterfront-homes"
+        },
+        {
+          "name": "Family Houses",
+          "href": "/properties/family-houses"
+        },
+        {
+          "name": "Holiday Retreats",
+          "href": "/properties/holiday-retreats"
+        }
       ],
       "contact_title": "Contact Information",
       "contact_items": [
-        { "icon": "map", "label": "Our Office", "text": "88 Grand Avenue, Suite 1200\nNew York, NY 10022", "href": "" },
-        { "icon": "phone", "label": "Phone Number", "text": "+1 (000) 123-4567", "href": "tel:+10001234567" },
-        { "icon": "mail", "label": "Email Address", "text": "contact@vorixrealestate.com", "href": "mailto:contact@vorixrealestate.com" }
+        {
+          "icon": "map",
+          "label": "Our Office",
+          "text": "123 Education Lane\nNew York, NY 10001",
+          "href": ""
+        },
+        {
+          "icon": "phone",
+          "label": "Phone Number",
+          "text": "+100000000000",
+          "href": "tel:+100000000000"
+        },
+        {
+          "icon": "mail",
+          "label": "Email Address",
+          "text": "info@xyz.com",
+          "href": "mailto:info@xyz.com"
+        }
       ],
       "copyright": "Copyright © 2026. All rights reserved. Powered by Lestow"
     },
@@ -69,12 +163,30 @@
                 "description": "Discover luxury villas, premium residences and office spaces in prime locations with Vorix Real Estate — trusted buying, selling, leasing and investment services."
               },
               "components": [
-                { "key": "HeroSection", "component": "Hero" },
-                { "key": "AboutSection", "component": "About" },
-                { "key": "ServicesSection", "component": "Services" },
-                { "key": "PropertiesSection", "component": "Properties" },
-                { "key": "TestimonialsSection", "component": "Testimonials" },
-                { "key": "BlogSection", "component": "Blog" }
+                {
+                  "key": "HeroSection",
+                  "component": "Hero"
+                },
+                {
+                  "key": "AboutSection",
+                  "component": "About"
+                },
+                {
+                  "key": "ServicesSection",
+                  "component": "Services"
+                },
+                {
+                  "key": "PropertiesSection",
+                  "component": "Properties"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                },
+                {
+                  "key": "BlogSection",
+                  "component": "Blog"
+                }
               ]
             },
             "not_found": {
@@ -94,81 +206,197 @@
                 "title": "About Us | Vorix Real Estate",
                 "description": "Learn about Vorix Real Estate — 25+ years of creating spaces that inspire living, 150+ properties sold and a client-first approach."
               },
+              "watermark": "About",
               "components": [
-                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
-                { "key": "AboutSection", "component": "About" },
-                { "key": "ServicesSection", "component": "Services" },
-                { "key": "TestimonialsSection", "component": "Testimonials" }
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "AboutSection",
+                  "component": "About"
+                },
+                {
+                  "key": "WhyChooseUsSection",
+                  "component": "WhyChooseUs"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                }
               ]
             },
             "services": {
               "title": "Services | Vorix Real Estate",
               "pageName": "Our Services",
+              "watermark": "Services",
               "metadata": {
                 "title": "Our Services | Vorix Real Estate",
                 "description": "Property buying assistance, selling services, rental & leasing solutions and investment consulting from Vorix Real Estate."
               },
               "components": [
-                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
-                { "key": "ServicesSection", "component": "Services" },
-                { "key": "PropertiesSection", "component": "Properties" },
-                { "key": "TestimonialsSection", "component": "Testimonials" }
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "ServicesSection",
+                  "component": "Services"
+                },
+                {
+                  "key": "PropertiesSection",
+                  "component": "Properties"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                }
               ]
             },
             "properties": {
               "title": "Properties | Vorix Real Estate",
               "pageName": "Properties",
+              "watermark": "Properties",
               "metadata": {
                 "title": "Properties | Vorix Real Estate - Exceptional Homes in Prime Locations",
                 "description": "Browse luxury villas, premium residences, apartments and office spaces in prime locations curated by Vorix Real Estate."
               },
               "components": [
-                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
-                { "key": "PropertiesSection", "component": "Properties" }
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "PropertiesSection",
+                  "component": "Properties"
+                }
               ]
             },
             "blog": {
               "title": "Blog | Vorix Real Estate",
               "pageName": "Our Blog",
+              "watermark": "Blog",
               "metadata": {
                 "title": "Blog | Vorix Real Estate - Insights Shaping Modern Real Estate",
                 "description": "Real estate market trends, home buying tips, investment strategies and modern living insights from the Vorix team."
               },
               "components": [
-                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
-                { "key": "BlogSection", "component": "Blog" }
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "BlogSection",
+                  "component": "Blog"
+                }
               ]
             },
             "blog_detail": {
               "title": "Blog Detail | Vorix Real Estate",
               "pageName": "Blog Detail",
+              "watermark": "Blog",
               "metadata": {
                 "title": "Blog Detail | Vorix Real Estate",
                 "description": "Read the latest real estate insights from Vorix Real Estate."
               },
               "components": [
-                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
-                { "key": "BlogDetailSection", "component": "BlogDetail" }
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "BlogDetailSection",
+                  "component": "BlogDetail"
+                }
+              ]
+            },
+            "property_detail": {
+              "title": "Property Details | Vorix Real Estate",
+              "pageName": "Property Details",
+              "watermark": "Property",
+              "metadata": {
+                "title": "Property Details | Vorix Real Estate",
+                "description": "Explore key details, features and location insights for premium properties curated by Vorix Real Estate."
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "PropertyDetailSection",
+                  "component": "PropertyDetail"
+                }
               ]
             },
             "contact": {
               "title": "Contact Us | Vorix Real Estate",
               "pageName": "Contact Us",
+              "watermark": "Contact",
               "metadata": {
                 "title": "Contact Us | Vorix Real Estate",
                 "description": "Get in touch with Vorix Real Estate to buy, sell, lease or invest in premium properties."
               },
               "components": [
-                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
-                { "key": "ContactSection", "component": "Contact" }
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "ContactSection",
+                  "component": "Contact"
+                }
+              ]
+            },
+            "enquiry": {
+              "title": "Enquire Now | Vorix Real Estate",
+              "pageName": "Enquire Now",
+              "watermark": "Enquiry",
+              "metadata": {
+                "title": "Enquire Now | Vorix Real Estate",
+                "description": "Share your requirements with Vorix Real Estate and our experts will help you find the right property options tailored to your goals."
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "EnquirySection",
+                  "component": "Enquiry"
+                }
+              ]
+            },
+            "team": {
+              "title": "Our Team | Vorix Real Estate",
+              "pageName": "Our Team",
+              "watermark": "Team",
+              "metadata": {
+                "title": "Our Team | Vorix Real Estate",
+                "description": "Meet the Vorix Real Estate team — experienced advisors combining deep market knowledge, strategic insight and a commitment to exceptional service."
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "TeamSection",
+                  "component": "Team"
+                }
               ]
             }
           },
           "sections": {
             "breadcrumb": {
-              "background_image": "/hero/hero.jpg",
-              "background_alt": "Modern luxury villa with pool at twilight",
-              "items": [{ "name": "Home", "href": "/" }]
+              "background_image": "/about/about-banner.webp",
+              "background_alt": "Modern glass and concrete residence reflected in a calm pool at dusk",
+              "items": [
+                {
+                  "name": "Home",
+                  "href": "/"
+                }
+              ]
             },
             "hero": {
               "eyebrow": "Discover Excellence",
@@ -177,7 +405,7 @@
               "description": "Discover premium properties in prime locations, designed for modern living. Whether you're buying, selling or investing, we make every step simple and rewarding.",
               "cta_text": "Explore Properties",
               "cta_link": "/properties",
-              "image": "/hero/hero-new.png",
+              "image": "/hero/hero-new.webp",
               "image_alt": "Modern luxury villa with palm trees and reflecting pool at dusk"
             },
             "about": {
@@ -191,15 +419,29 @@
               ],
               "button_text": "Learn More",
               "button_link": "/about",
-              "image_main": "/about/about-1.jpg",
+              "image_main": "/about/about-1.webp",
               "image_main_alt": "Modern luxury house with glass facade glowing at dusk",
-              "image_secondary": "/about/interior.jpg",
+              "image_secondary": "/about/interior.webp",
               "image_secondary_alt": "Luxury penthouse living room with city skyline view",
-              "tags": ["Modern", "Elegant", "Spacious", "Premium"],
+              "tags": [
+                "Modern",
+                "Elegant",
+                "Spacious",
+                "Premium"
+              ],
               "stats": [
-                { "value": "25+", "label": "Prime Locations" },
-                { "value": "150+", "label": "Happy Families" },
-                { "value": "10+", "label": "Years of Trust" }
+                {
+                  "value": "25+",
+                  "label": "Prime Locations"
+                },
+                {
+                  "value": "150+",
+                  "label": "Happy Families"
+                },
+                {
+                  "value": "10+",
+                  "label": "Years of Trust"
+                }
               ]
             },
             "services": {
@@ -239,6 +481,36 @@
                 }
               ]
             },
+            "why_choose_us": {
+              "eyebrow": "Why Choose Vorix",
+              "title_regular": "Where Expertise Meets",
+              "title_highlight": "Exceptional Results",
+              "description": "We go beyond just properties. We offer strategic guidance, market expertise, and a client-first approach to help you find the right opportunities in the luxury real estate market.",
+              "image": "/about/why-choose.webp",
+              "image_alt": "Modern two-storey villa with cantilevered roof, glowing interiors and reflecting pool at dusk",
+              "items": [
+                {
+                  "id": "market-expertise",
+                  "title": "Proven Market Expertise",
+                  "description": "In-depth knowledge of premium locations and market trends to help you make confident property decisions."
+                },
+                {
+                  "id": "exclusive-portfolio",
+                  "title": "Exclusive Property Portfolio",
+                  "description": "Access to carefully curated residential, commercial, and investment properties that meet the highest standards of quality and value."
+                },
+                {
+                  "id": "personalized-consultation",
+                  "title": "Personalized Consultation",
+                  "description": "Tailored solutions based on your goals, preferences, and long-term vision, ensuring a seamless and rewarding experience."
+                },
+                {
+                  "id": "end-to-end-support",
+                  "title": "End-to-End Support",
+                  "description": "From property selection to legal guidance and after-sales assistance, we are with you at every step of your real estate journey."
+                }
+              ]
+            },
             "properties": {
               "eyebrow": "Featured Properties",
               "title_regular": "Exceptional Homes in",
@@ -252,51 +524,1218 @@
                   "id": "luxury-villas",
                   "category": "Residential",
                   "title": "Luxury Villas",
-                  "image": "/properties/luxury-villa.jpg",
+                  "image": "/properties/luxury-villa.webp",
                   "alt": "Luxury white villa with pool at golden hour",
-                  "href": "/properties"
+                  "href": "/properties/luxury-villas"
                 },
                 {
                   "id": "premium-residences",
                   "category": "Apartments",
                   "title": "Premium Residences",
-                  "image": "/properties/premium-residence.jpg",
+                  "image": "/properties/premium-residence.webp",
                   "alt": "Premium residence with stone and wood facade at twilight",
-                  "href": "/properties"
+                  "href": "/properties/premium-residences"
                 },
                 {
                   "id": "office-spaces",
                   "category": "Commercial",
                   "title": "Office Spaces",
-                  "image": "/properties/office-space.jpg",
+                  "image": "/properties/office-space.webp",
                   "alt": "Modern glass office tower",
-                  "href": "/properties"
+                  "href": "/properties/office-spaces"
                 },
                 {
                   "id": "waterfront-homes",
                   "category": "Residential",
                   "title": "Waterfront Homes",
-                  "image": "/hero/hero.jpg",
+                  "image": "/hero/hero.webp",
                   "alt": "Modern villa with infinity pool at night",
-                  "href": "/properties"
+                  "href": "/properties/waterfront-homes"
                 },
                 {
                   "id": "family-houses",
                   "category": "Townhouses",
                   "title": "Family Houses",
-                  "image": "/about/about-1.jpg",
+                  "image": "/about/about-1.webp",
                   "alt": "Three-story modern family home",
-                  "href": "/properties"
+                  "href": "/properties/family-houses"
                 },
                 {
                   "id": "holiday-retreats",
                   "category": "Vacation",
                   "title": "Holiday Retreats",
-                  "image": "/about/about-2.jpg",
+                  "image": "/about/about-2.webp",
                   "alt": "Minimalist white retreat with pool at sunset",
-                  "href": "/properties"
+                  "href": "/properties/holiday-retreats"
+                },
+                {
+                  "id": "smart-eco-homes",
+                  "category": "Residential",
+                  "title": "Smart Eco Homes",
+                  "image": "/blog/blog-1.webp",
+                  "alt": "Eco-friendly smart home with solar panels",
+                  "href": "/properties/smart-eco-homes"
+                },
+                {
+                  "id": "contemporary-residences",
+                  "category": "Residential",
+                  "title": "Contemporary Residences",
+                  "image": "/blog/blog-2.webp",
+                  "alt": "Contemporary dark facade house with reflecting pool",
+                  "href": "/properties/contemporary-residences"
+                },
+                {
+                  "id": "city-apartments",
+                  "category": "Apartments",
+                  "title": "City Apartments",
+                  "image": "/blog/blog-3.webp",
+                  "alt": "Luxury apartment building in an upscale neighborhood",
+                  "href": "/properties/city-apartments"
+                },
+                {
+                  "id": "penthouse-suites",
+                  "category": "Penthouse",
+                  "title": "Penthouse Suites",
+                  "image": "/about/interior.webp",
+                  "alt": "Luxury penthouse living room with city skyline view",
+                  "href": "/properties/penthouse-suites"
+                },
+                {
+                  "id": "palm-grove-villas",
+                  "category": "Residential",
+                  "title": "Palm Grove Villas",
+                  "image": "/hero/hero-new.webp",
+                  "alt": "Modern luxury villa with palm trees and reflecting pool at dusk",
+                  "href": "/properties/palm-grove-villas"
+                },
+                {
+                  "id": "lakeside-estates",
+                  "category": "Estates",
+                  "title": "Lakeside Estates",
+                  "image": "/about/about-banner.webp",
+                  "alt": "Glass and concrete lakeside residence reflected in a calm pool at dusk",
+                  "href": "/properties/lakeside-estates"
                 }
-              ]
+              ],
+              "homepage_count": 6,
+              "per_page": 6,
+              "pagination": {
+                "label": "Properties pagination",
+                "prev_aria_label": "Previous page",
+                "next_aria_label": "Next page",
+                "page_aria_label": "Go to page",
+                "showing_text": "Showing {from}–{to} of {total} properties"
+              },
+              "slides_aria_label": "Property slides",
+              "slide_aria_label": "Go to slide"
+            },
+            "property_detail": {
+              "key_details_title": "Key Details",
+              "description_title": "Property Description",
+              "location_title": "Location Insight",
+              "map_link_text": "View on Google Maps",
+              "map_title_prefix": "Map showing the location of"
+            },
+            "property_details": {
+              "luxury-villas": {
+                "title": "Skyline Luxury Villa",
+                "location": "Dubai, UAE",
+                "hero_image": "/property-details/skyline-villa-main.webp",
+                "hero_alt": "Skyline Luxury Villa with infinity pool and glowing glass facade at dusk",
+                "gallery_image": "/property-details/skyline-villa-terrace.webp",
+                "gallery_alt": "Villa terrace with infinity pool overlooking the Dubai skyline at sunset",
+                "overview": [
+                  "This exceptional villa combines contemporary architecture with refined interiors, offering an unparalleled living experience. Designed for those who seek privacy, elegance, and modern comfort, the property features expansive indoor and outdoor spaces with breathtaking views of the city skyline.",
+                  "Every detail has been thoughtfully crafted, from premium finishes to seamless open-plan living areas, making it an ideal residence for families or a valuable investment in one of the most sought-after locations."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Luxury Villa"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "5"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "6"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "1,200 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "850 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "Private Garage (3 Cars)"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Dubai, UAE"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "The villa showcases a harmonious blend of modern architecture and functional luxury living. Spacious interiors are enhanced by natural light, creating a warm and inviting atmosphere throughout the home.",
+                  "Designed with privacy and comfort in mind, the layout seamlessly connects indoor and outdoor areas, offering an elevated lifestyle experience with premium finishes and world-class amenities."
+                ],
+                "features": [
+                  "Private infinity pool",
+                  "Landscaped garden",
+                  "Expansive living area",
+                  "Spacious terrace & lounge",
+                  "Floor-to-ceiling windows",
+                  "Premium marble finishes",
+                  "Open-plan kitchen",
+                  "Walk-in closets",
+                  "Smart home automation",
+                  "Panoramic city views"
+                ],
+                "location_text": "Situated in a prime area of Dubai, this property offers easy access to key business districts, fine dining, luxury shopping, and top international schools. The location is known for its world-class infrastructure, exceptional connectivity, and vibrant lifestyle, making it a highly desirable address for both residents and investors.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Dubai+Hills+Estate,Dubai&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Dubai+Hills+Estate,Dubai"
+                },
+                "nearby": [
+                  {
+                    "icon": "plane",
+                    "time": "15 Mins",
+                    "place": "Dubai International Airport"
+                  },
+                  {
+                    "icon": "building",
+                    "time": "10 Mins",
+                    "place": "Downtown Dubai"
+                  },
+                  {
+                    "icon": "shopping",
+                    "time": "8 Mins",
+                    "place": "Dubai Mall"
+                  }
+                ]
+              },
+              "premium-residences": {
+                "title": "The Aurora Residences",
+                "location": "London, UK",
+                "hero_image": "/properties/premium-residence.webp",
+                "hero_alt": "The Aurora Residences with stone and timber facade at twilight",
+                "gallery_image": "/about/interior.webp",
+                "gallery_alt": "Aurora Residences living room with skyline view",
+                "overview": [
+                  "The Aurora Residences bring boutique luxury to one of London's most prestigious neighbourhoods. Crafted with natural stone, warm timber and generous glazing, each residence balances timeless character with contemporary comfort.",
+                  "Thoughtful layouts, concierge services and beautifully landscaped communal gardens make this an exceptional home for professionals and families alike."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Premium Apartment"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "3"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "3"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Terrace Size",
+                    "value": "60 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Interior Size",
+                    "value": "210 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "Underground (2 Cars)"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Kensington, London"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "Inside, wide-plank oak floors, bespoke joinery and designer lighting set a refined tone. The open kitchen and dining area flows onto a private terrace, perfect for entertaining or quiet evenings.",
+                  "Bedrooms are designed as calm retreats with en-suite bathrooms finished in natural stone, while the principal suite enjoys a dressing room and city views."
+                ],
+                "features": [
+                  "24/7 concierge",
+                  "Private terrace",
+                  "Residents' gym & spa",
+                  "Communal gardens",
+                  "Underfloor heating",
+                  "Bespoke oak joinery",
+                  "Gaggenau appliances",
+                  "En-suite bathrooms",
+                  "Secure underground parking",
+                  "Video entry system"
+                ],
+                "location_text": "Set in Kensington, the Aurora Residences are moments from Hyde Park, world-renowned museums, Michelin-starred restaurants and the boutiques of High Street Kensington. Excellent transport links put the City and West End within easy reach.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Kensington,London&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Kensington,London"
+                },
+                "nearby": [
+                  {
+                    "icon": "train",
+                    "time": "4 Mins",
+                    "place": "High Street Kensington Station"
+                  },
+                  {
+                    "icon": "park",
+                    "time": "6 Mins",
+                    "place": "Hyde Park"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "35 Mins",
+                    "place": "Heathrow Airport"
+                  }
+                ]
+              },
+              "office-spaces": {
+                "title": "Meridian Corporate Tower",
+                "location": "New York, USA",
+                "hero_image": "/properties/office-space.webp",
+                "hero_alt": "Meridian Corporate Tower glass facade",
+                "gallery_image": "/about/about-banner.webp",
+                "gallery_alt": "Glass and concrete architecture reflected in a pool",
+                "overview": [
+                  "Meridian Corporate Tower is a Class-A office building offering flexible floor plates, abundant natural light and a striking glass facade in the heart of Midtown Manhattan.",
+                  "Designed for forward-thinking businesses, the tower combines wellness-focused amenities with cutting-edge infrastructure to create a workplace that attracts and retains top talent."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Commercial Office"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Floors",
+                    "value": "32"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Floor Plate",
+                    "value": "1,850 m²"
+                  },
+                  {
+                    "icon": "briefcase",
+                    "label": "Available Space",
+                    "value": "4 Full Floors"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "120 Bays"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Midtown, New York"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "For Lease"
+                  }
+                ],
+                "description": [
+                  "Column-free floors allow complete flexibility, from open collaborative layouts to private executive suites. Floor-to-ceiling glazing floods every level with daylight and frames sweeping city views.",
+                  "The building is LEED Platinum certified, with advanced air filtration, destination-dispatch elevators and a landscaped rooftop terrace for meetings and events."
+                ],
+                "features": [
+                  "LEED Platinum certified",
+                  "Column-free floor plates",
+                  "Rooftop terrace",
+                  "Destination-dispatch lifts",
+                  "24/7 security & access control",
+                  "On-site café & lounge",
+                  "Fitness centre & showers",
+                  "Bike storage",
+                  "Fibre connectivity",
+                  "Conference facilities"
+                ],
+                "location_text": "Located in Midtown Manhattan, Meridian Corporate Tower sits steps from Grand Central Terminal, Bryant Park and countless dining options, giving teams and clients effortless access across the city.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Midtown+Manhattan,New+York&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Midtown+Manhattan,New+York"
+                },
+                "nearby": [
+                  {
+                    "icon": "train",
+                    "time": "3 Mins",
+                    "place": "Grand Central Terminal"
+                  },
+                  {
+                    "icon": "park",
+                    "time": "5 Mins",
+                    "place": "Bryant Park"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "30 Mins",
+                    "place": "LaGuardia Airport"
+                  }
+                ]
+              },
+              "waterfront-homes": {
+                "title": "Azure Waterfront Villa",
+                "location": "Miami, USA",
+                "hero_image": "/hero/hero.webp",
+                "hero_alt": "Azure Waterfront Villa with infinity pool at night",
+                "gallery_image": "/about/about-2.webp",
+                "gallery_alt": "Villa pool terrace at sunset",
+                "overview": [
+                  "Azure Waterfront Villa is a statement residence on Miami's coveted waterfront, pairing sculptural architecture with resort-style outdoor living and uninterrupted bay views.",
+                  "Wide glass walls open the interiors to the pool deck and private dock, creating a seamless connection between home, garden and water."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Waterfront Villa"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "6"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "7"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "1,600 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "980 m²"
+                  },
+                  {
+                    "icon": "anchor",
+                    "label": "Private Dock",
+                    "value": "Up to 80 ft Yacht"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Miami Beach, USA"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "The ground floor is dedicated to entertaining, with a chef's kitchen, wine room and great room that opens fully onto the terrace. Upstairs, the principal suite enjoys a private balcony overlooking the bay.",
+                  "Outdoor spaces include an infinity pool, summer kitchen, fire lounge and lush tropical landscaping designed for year-round enjoyment."
+                ],
+                "features": [
+                  "Infinity-edge pool",
+                  "Private boat dock",
+                  "Summer kitchen",
+                  "Temperature-controlled wine room",
+                  "Home cinema",
+                  "Fire lounge",
+                  "Elevator",
+                  "Hurricane-rated glass",
+                  "Smart home automation",
+                  "Panoramic bay views"
+                ],
+                "location_text": "Positioned on an exclusive stretch of Miami Beach, the villa offers quick access to South Beach dining, the Design District, private beach clubs and Miami International Airport.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Miami+Beach,Florida&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Miami+Beach,Florida"
+                },
+                "nearby": [
+                  {
+                    "icon": "beach",
+                    "time": "5 Mins",
+                    "place": "South Beach"
+                  },
+                  {
+                    "icon": "shopping",
+                    "time": "15 Mins",
+                    "place": "Design District"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "20 Mins",
+                    "place": "Miami International Airport"
+                  }
+                ]
+              },
+              "family-houses": {
+                "title": "Maple Grove Family Residence",
+                "location": "Toronto, Canada",
+                "hero_image": "/about/about-1.webp",
+                "hero_alt": "Maple Grove three-storey modern family home",
+                "gallery_image": "/about/interior.webp",
+                "gallery_alt": "Bright open-plan family living room",
+                "overview": [
+                  "Maple Grove Family Residence is a three-storey modern home designed around family life, with generous living spaces, a private garden and a quiet, tree-lined setting.",
+                  "Clean architectural lines, warm materials and abundant natural light create a welcoming home that grows with your family."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Detached House"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "4"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "640 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "380 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "Double Garage"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Toronto, Canada"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "The main floor features an open kitchen with a large island, a family room with fireplace and sliding doors to the garden. A dedicated home office offers a quiet space for remote work.",
+                  "Upstairs, four bedrooms include a principal suite with walk-in closet and spa-style ensuite, while the lower level offers a recreation room and guest suite."
+                ],
+                "features": [
+                  "Private landscaped garden",
+                  "Gas fireplace",
+                  "Kitchen island & pantry",
+                  "Home office",
+                  "Recreation room",
+                  "Guest suite",
+                  "Walk-in closets",
+                  "Heated floors",
+                  "Energy-efficient windows",
+                  "EV charging point"
+                ],
+                "location_text": "Nestled in a family-friendly Toronto neighbourhood, the home is close to top-rated schools, parks, community centres and convenient transit into downtown.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Lawrence+Park,Toronto&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Lawrence+Park,Toronto"
+                },
+                "nearby": [
+                  {
+                    "icon": "school",
+                    "time": "5 Mins",
+                    "place": "Lawrence Park Collegiate"
+                  },
+                  {
+                    "icon": "park",
+                    "time": "3 Mins",
+                    "place": "Alexander Muir Gardens"
+                  },
+                  {
+                    "icon": "building",
+                    "time": "20 Mins",
+                    "place": "Downtown Toronto"
+                  }
+                ]
+              },
+              "holiday-retreats": {
+                "title": "Serenity Cliffside Retreat",
+                "location": "Bali, Indonesia",
+                "hero_image": "/about/about-2.webp",
+                "hero_alt": "Serenity Cliffside Retreat with pool at sunset",
+                "gallery_image": "/properties/luxury-villa.webp",
+                "gallery_alt": "White retreat villa with pool at golden hour",
+                "overview": [
+                  "Serenity Cliffside Retreat is a minimalist holiday villa perched above the Indian Ocean, designed for slow mornings, sunset swims and complete privacy.",
+                  "With strong rental demand and a turnkey furnished interior, it's equally suited as a personal escape or a high-yield holiday investment."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Holiday Villa"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "4"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "900 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "420 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "2 Cars"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Uluwatu, Bali"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "Living spaces open completely to the pool deck, framing ocean views from every angle. Natural stone, teak and linen create a calm, barefoot-luxury atmosphere.",
+                  "Each bedroom suite has its own outdoor bathroom garden, while a rooftop lounge provides the perfect spot for sunset gatherings."
+                ],
+                "features": [
+                  "Ocean-view infinity pool",
+                  "Rooftop sunset lounge",
+                  "Fully furnished",
+                  "Outdoor bathroom gardens",
+                  "Yoga pavilion",
+                  "Staff quarters",
+                  "Tropical landscaping",
+                  "Solar water heating",
+                  "Rental management ready",
+                  "Private beach access"
+                ],
+                "location_text": "Located in Uluwatu on Bali's southern peninsula, the retreat is minutes from world-famous surf breaks, cliffside beach clubs and the iconic Uluwatu Temple.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Uluwatu,Bali&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Uluwatu,Bali"
+                },
+                "nearby": [
+                  {
+                    "icon": "beach",
+                    "time": "5 Mins",
+                    "place": "Padang Padang Beach"
+                  },
+                  {
+                    "icon": "landmark",
+                    "time": "10 Mins",
+                    "place": "Uluwatu Temple"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "35 Mins",
+                    "place": "Ngurah Rai Airport"
+                  }
+                ]
+              },
+              "smart-eco-homes": {
+                "title": "Solaris Smart Eco Home",
+                "location": "Sydney, Australia",
+                "hero_image": "/blog/blog-1.webp",
+                "hero_alt": "Solaris eco-friendly smart home with solar panels",
+                "gallery_image": "/hero/hero-new.webp",
+                "gallery_alt": "Modern home with reflecting pool and palms at dusk",
+                "overview": [
+                  "Solaris is a net-zero smart home that proves sustainability and luxury go hand in hand. Solar generation, battery storage and intelligent climate control keep running costs remarkably low.",
+                  "Every system can be managed from a single app, from lighting scenes to security and energy monitoring."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Smart Eco Home"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "3"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "720 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "340 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "2 Cars + EV Charger"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Sydney, Australia"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "Passive design principles orient living areas toward the sun, while high-performance glazing and insulation maintain comfort year-round with minimal energy use.",
+                  "Rainwater harvesting feeds the garden and laundry, and a native landscape reduces water needs while attracting local wildlife."
+                ],
+                "features": [
+                  "12 kW solar array",
+                  "Home battery storage",
+                  "Smart climate control",
+                  "Rainwater harvesting",
+                  "Double-glazed windows",
+                  "EV charging station",
+                  "App-controlled security",
+                  "Native landscaping",
+                  "Heat-pump hot water",
+                  "Energy monitoring dashboard"
+                ],
+                "location_text": "Set on Sydney's Northern Beaches, Solaris is close to golden beaches, coastal walks, quality schools and a direct bus line to the CBD.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Manly,Sydney&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Manly,Sydney"
+                },
+                "nearby": [
+                  {
+                    "icon": "beach",
+                    "time": "4 Mins",
+                    "place": "Manly Beach"
+                  },
+                  {
+                    "icon": "school",
+                    "time": "6 Mins",
+                    "place": "Manly Village School"
+                  },
+                  {
+                    "icon": "building",
+                    "time": "30 Mins",
+                    "place": "Sydney CBD"
+                  }
+                ]
+              },
+              "contemporary-residences": {
+                "title": "Obsidian Contemporary House",
+                "location": "Los Angeles, USA",
+                "hero_image": "/blog/blog-2.webp",
+                "hero_alt": "Obsidian contemporary dark facade house with reflecting pool",
+                "gallery_image": "/hero/hero.webp",
+                "gallery_alt": "Modern villa with infinity pool at night",
+                "overview": [
+                  "Obsidian is an architectural landmark in the Hollywood Hills, defined by its dark facade, dramatic cantilevers and a reflecting pool that mirrors the city lights.",
+                  "Inside, gallery-like volumes and curated finishes create the perfect backdrop for art, entertaining and everyday luxury."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Contemporary House"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "5"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "6"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "1,050 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "720 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "Gallery Garage (4 Cars)"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Hollywood Hills, LA"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Under Offer"
+                  }
+                ],
+                "description": [
+                  "Soaring ceilings, polished concrete and walnut detailing define the great room, which opens to an entertainer's terrace with a reflecting pool and outdoor kitchen.",
+                  "The principal wing includes a sitting room, spa bath and private terrace, while a lower level hosts a cinema, gym and wine gallery."
+                ],
+                "features": [
+                  "Reflecting pool",
+                  "City-light views",
+                  "Home cinema",
+                  "Private gym",
+                  "Wine gallery",
+                  "Outdoor kitchen",
+                  "Gallery-style lighting",
+                  "Polished concrete floors",
+                  "Gated entry",
+                  "Smart home automation"
+                ],
+                "location_text": "Perched in the Hollywood Hills, Obsidian offers privacy and views while staying close to Sunset Boulevard dining, West Hollywood boutiques and Beverly Hills.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Hollywood+Hills,Los+Angeles&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Hollywood+Hills,Los+Angeles"
+                },
+                "nearby": [
+                  {
+                    "icon": "shopping",
+                    "time": "10 Mins",
+                    "place": "Sunset Strip"
+                  },
+                  {
+                    "icon": "building",
+                    "time": "15 Mins",
+                    "place": "Beverly Hills"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "35 Mins",
+                    "place": "LAX Airport"
+                  }
+                ]
+              },
+              "city-apartments": {
+                "title": "Park Avenue City Apartments",
+                "location": "Singapore",
+                "hero_image": "/blog/blog-3.webp",
+                "hero_alt": "Park Avenue luxury apartment building",
+                "gallery_image": "/about/interior.webp",
+                "gallery_alt": "Apartment living room with skyline view",
+                "overview": [
+                  "Park Avenue City Apartments offer elegant urban living in Singapore's prime District 10, with refined interiors, resort-style facilities and lush sky gardens.",
+                  "Efficient layouts and premium specifications make these residences ideal for young professionals, families and investors seeking strong rental demand."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Apartment"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "2 – 4"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "2 – 3"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Unit Size",
+                    "value": "95 – 180 m²"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Floors",
+                    "value": "28 Storeys"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "1 Space per Unit"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "District 10, Singapore"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Selling Fast"
+                  }
+                ],
+                "description": [
+                  "Each apartment features full-height windows, engineered timber floors and a designer kitchen with integrated appliances. Balconies extend the living space outdoors.",
+                  "Residents enjoy a 50-metre lap pool, sky garden, gym, function rooms and a children's play area within a secure, landscaped development."
+                ],
+                "features": [
+                  "50 m lap pool",
+                  "Sky garden",
+                  "Fully equipped gym",
+                  "Function rooms",
+                  "Children's play area",
+                  "Private balconies",
+                  "Integrated appliances",
+                  "24/7 security",
+                  "Smart lock access",
+                  "Close to MRT"
+                ],
+                "location_text": "Located in District 10, the development is close to Orchard Road shopping, the Botanic Gardens, prestigious schools and multiple MRT stations.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Holland+Road,Singapore&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Holland+Road,Singapore"
+                },
+                "nearby": [
+                  {
+                    "icon": "train",
+                    "time": "3 Mins",
+                    "place": "Holland Village MRT"
+                  },
+                  {
+                    "icon": "park",
+                    "time": "8 Mins",
+                    "place": "Botanic Gardens"
+                  },
+                  {
+                    "icon": "shopping",
+                    "time": "10 Mins",
+                    "place": "Orchard Road"
+                  }
+                ]
+              },
+              "penthouse-suites": {
+                "title": "Skyview Penthouse Suite",
+                "location": "Dubai Marina, UAE",
+                "hero_image": "/about/interior.webp",
+                "hero_alt": "Skyview Penthouse living room with skyline view",
+                "gallery_image": "/property-details/skyline-villa-terrace.webp",
+                "gallery_alt": "Penthouse terrace with infinity pool overlooking Dubai Marina",
+                "overview": [
+                  "Skyview Penthouse Suite crowns one of Dubai Marina's most iconic towers, offering double-height living spaces, a private pool terrace and 360° views of the sea and skyline.",
+                  "Bespoke interiors by an award-winning studio and dedicated butler service deliver a truly five-star lifestyle at home."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Penthouse"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "4"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "5"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Terrace Size",
+                    "value": "240 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Interior Size",
+                    "value": "610 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "4 Reserved Bays"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Dubai Marina, UAE"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "A double-height living room with floor-to-ceiling glass opens onto a wraparound terrace with infinity pool, outdoor dining and lounge areas overlooking the marina.",
+                  "The principal suite occupies its own level with a private study, dressing room and spa bathroom with skyline views."
+                ],
+                "features": [
+                  "Private infinity pool",
+                  "360° sea & skyline views",
+                  "Double-height living room",
+                  "Wraparound terrace",
+                  "Private elevator",
+                  "Butler service",
+                  "Designer interiors",
+                  "Wine cellar",
+                  "Smart home automation",
+                  "Marina beach access"
+                ],
+                "location_text": "In the heart of Dubai Marina, the penthouse is steps from the Marina Walk, JBR beach, waterfront dining and the Dubai Tram, with Palm Jumeirah minutes away.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Dubai+Marina,Dubai&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Dubai+Marina,Dubai"
+                },
+                "nearby": [
+                  {
+                    "icon": "beach",
+                    "time": "5 Mins",
+                    "place": "JBR Beach"
+                  },
+                  {
+                    "icon": "shopping",
+                    "time": "6 Mins",
+                    "place": "Dubai Marina Mall"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "30 Mins",
+                    "place": "Dubai International Airport"
+                  }
+                ]
+              },
+              "palm-grove-villas": {
+                "title": "Palm Grove Signature Villa",
+                "location": "Marbella, Spain",
+                "hero_image": "/hero/hero-new.webp",
+                "hero_alt": "Palm Grove Signature Villa with palm trees and reflecting pool at dusk",
+                "gallery_image": "/properties/luxury-villa.webp",
+                "gallery_alt": "White villa with pool at golden hour",
+                "overview": [
+                  "Palm Grove Signature Villa is a Mediterranean masterpiece set among mature palms on Marbella's Golden Mile, blending clean modern lines with warm natural materials.",
+                  "Indoor and outdoor living merge effortlessly around a reflecting pool, creating a serene sanctuary just minutes from the coast."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Signature Villa"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "6"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "6"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "2,100 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "890 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "Covered (4 Cars)"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Golden Mile, Marbella"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "A dramatic entrance hall leads to light-filled living and dining rooms that open onto shaded porches, the pool and landscaped gardens.",
+                  "Six en-suite bedrooms, a spa with sauna and a separate guest apartment provide comfort and privacy for family and visitors."
+                ],
+                "features": [
+                  "Reflecting pool",
+                  "Mature palm gardens",
+                  "Spa with sauna",
+                  "Guest apartment",
+                  "Outdoor dining porch",
+                  "Home cinema",
+                  "Underfloor heating",
+                  "Gated & secure",
+                  "Sea glimpses",
+                  "Walk to the beach"
+                ],
+                "location_text": "On Marbella's prestigious Golden Mile, the villa is moments from the beach, Puerto Banús marina, championship golf courses and the old town's restaurants.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Golden+Mile,Marbella&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Golden+Mile,Marbella"
+                },
+                "nearby": [
+                  {
+                    "icon": "beach",
+                    "time": "4 Mins",
+                    "place": "Golden Mile Beach"
+                  },
+                  {
+                    "icon": "anchor",
+                    "time": "10 Mins",
+                    "place": "Puerto Banús"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "40 Mins",
+                    "place": "Málaga Airport"
+                  }
+                ]
+              },
+              "lakeside-estates": {
+                "title": "Lakeside Glass Estate",
+                "location": "Zurich, Switzerland",
+                "hero_image": "/about/about-banner.webp",
+                "hero_alt": "Lakeside Glass Estate reflected in a calm pool at dusk",
+                "gallery_image": "/hero/hero.webp",
+                "gallery_alt": "Modern villa with infinity pool at night",
+                "overview": [
+                  "Lakeside Glass Estate is an architect-designed residence of glass and board-formed concrete, set on the shores of Lake Zurich with private water frontage and alpine views.",
+                  "Its calm, gallery-like spaces and reflecting pools create a rare sense of tranquillity just minutes from the city centre."
+                ],
+                "key_details": [
+                  {
+                    "icon": "home",
+                    "label": "Property Type",
+                    "value": "Lakeside Estate"
+                  },
+                  {
+                    "icon": "bed",
+                    "label": "Bedrooms",
+                    "value": "6"
+                  },
+                  {
+                    "icon": "bath",
+                    "label": "Bathrooms",
+                    "value": "7"
+                  },
+                  {
+                    "icon": "land",
+                    "label": "Land Size",
+                    "value": "3,400 m²"
+                  },
+                  {
+                    "icon": "building",
+                    "label": "Building Size",
+                    "value": "1,150 m²"
+                  },
+                  {
+                    "icon": "car",
+                    "label": "Parking",
+                    "value": "Underground (5 Cars)"
+                  },
+                  {
+                    "icon": "map",
+                    "label": "Location",
+                    "value": "Lake Zurich, Switzerland"
+                  },
+                  {
+                    "icon": "status",
+                    "label": "Status",
+                    "value": "Available"
+                  }
+                ],
+                "description": [
+                  "Three levels of living are arranged around a central glass atrium, with the main living spaces opening onto terraces and a reflecting pool that appears to merge with the lake.",
+                  "Highlights include a library, wellness floor with indoor pool, private boathouse and a landscaped garden designed by a renowned Swiss landscape architect."
+                ],
+                "features": [
+                  "Private lake frontage",
+                  "Boathouse & jetty",
+                  "Indoor pool & spa",
+                  "Reflecting pools",
+                  "Central glass atrium",
+                  "Library",
+                  "Alpine views",
+                  "Geothermal heating",
+                  "Staff apartment",
+                  "Smart home automation"
+                ],
+                "location_text": "On the 'Gold Coast' of Lake Zurich, the estate enjoys afternoon sun and mountain views, with Zurich's financial district, international schools and the airport all within easy reach.",
+                "map": {
+                  "embed_url": "https://www.google.com/maps?q=Kusnacht,Zurich&output=embed",
+                  "link_url": "https://www.google.com/maps?q=Kusnacht,Zurich"
+                },
+                "nearby": [
+                  {
+                    "icon": "building",
+                    "time": "15 Mins",
+                    "place": "Zurich City Centre"
+                  },
+                  {
+                    "icon": "school",
+                    "time": "10 Mins",
+                    "place": "International School"
+                  },
+                  {
+                    "icon": "plane",
+                    "time": "25 Mins",
+                    "place": "Zurich Airport"
+                  }
+                ]
+              }
             },
             "testimonials": {
               "eyebrow": "Client Testimonials",
@@ -313,9 +1752,9 @@
                   "quote": "Vorix made the entire property buying process simple and stress-free. Their team understood our requirements, guided us at every step, and helped us find the perfect home in the right location. From site visits to paperwork, everything was transparent and on time, and we moved in without a single worry.",
                   "author": "Rohan Mehta",
                   "role": "Homeowner",
-                  "avatar": "/testimonials/client-1.jpg",
+                  "avatar": "/testimonials/client-1.webp",
                   "rating": 5,
-                  "image": "/about/about-2.jpg",
+                  "image": "/about/about-2.webp",
                   "image_alt": "Modern villa with pool purchased by Rohan Mehta"
                 },
                 {
@@ -323,9 +1762,9 @@
                   "quote": "Selling our family home felt overwhelming until we partnered with Vorix. Their pricing strategy, professional photography and targeted marketing brought multiple offers within just two weeks, well above our expectations. They handled every negotiation with care and kept us informed throughout the process.",
                   "author": "Priya Sharma",
                   "role": "Property Seller",
-                  "avatar": "/testimonials/client-2.jpg",
+                  "avatar": "/testimonials/client-2.webp",
                   "rating": 5,
-                  "image": "/properties/premium-residence.jpg",
+                  "image": "/properties/premium-residence.webp",
                   "image_alt": "Premium residence sold by Priya Sharma"
                 },
                 {
@@ -333,9 +1772,9 @@
                   "quote": "Their investment consulting helped me build a portfolio of three rental units in under a year. Clear market data, honest advice and constant support made every decision easier. Vorix also manages tenants and maintenance for me, so my properties generate steady income without taking up my time.",
                   "author": "Kenji Tanaka",
                   "role": "Real Estate Investor",
-                  "avatar": "/testimonials/client-3.jpg",
+                  "avatar": "/testimonials/client-3.webp",
                   "rating": 5,
-                  "image": "/blog/blog-3.jpg",
+                  "image": "/blog/blog-3.webp",
                   "image_alt": "Luxury apartment building in Kenji Tanaka's portfolio"
                 },
                 {
@@ -343,9 +1782,9 @@
                   "quote": "From the first viewing to handing over the keys, everything was handled professionally. Vorix found us a stunning waterfront villa that ticked every box on our list. Their team negotiated a great price, coordinated inspections and legal checks, and made the whole experience feel effortless.",
                   "author": "Emma Collins",
                   "role": "Villa Owner",
-                  "avatar": "/testimonials/client-4.jpg",
+                  "avatar": "/testimonials/client-4.webp",
                   "rating": 5,
-                  "image": "/properties/luxury-villa.jpg",
+                  "image": "/properties/luxury-villa.webp",
                   "image_alt": "Waterfront luxury villa owned by Emma Collins"
                 },
                 {
@@ -353,12 +1792,15 @@
                   "quote": "We needed a modern office space for our growing team on a tight timeline. Vorix shortlisted the best options in just a few days, arranged viewings around our schedule and negotiated lease terms that saved us significantly. Our new workspace has truly boosted team morale and productivity.",
                   "author": "David Okafor",
                   "role": "Business Owner",
-                  "avatar": "/testimonials/client-5.jpg",
+                  "avatar": "/testimonials/client-5.webp",
                   "rating": 5,
-                  "image": "/properties/office-space.jpg",
+                  "image": "/properties/office-space.webp",
                   "image_alt": "Modern office building leased by David Okafor"
                 }
-              ]
+              ],
+              "slides_aria_label": "Testimonials",
+              "testimonial_aria_label": "Show testimonial from",
+              "rating_aria_label": "out of 5 stars"
             },
             "blog": {
               "eyebrow": "Latest Insights",
@@ -370,6 +1812,14 @@
               "read_more_text": "Read More",
               "author_prefix": "By",
               "homepage_count": 3,
+              "per_page": 6,
+              "pagination": {
+                "label": "Blog pagination",
+                "prev_aria_label": "Previous page",
+                "next_aria_label": "Next page",
+                "page_aria_label": "Go to page",
+                "showing_text": "Showing {from}–{to} of {total} articles"
+              },
               "posts": [
                 {
                   "id": "smart-living",
@@ -378,7 +1828,7 @@
                   "category": "Lifestyle",
                   "date": "Oct 12, 2026",
                   "author": "Admin",
-                  "image": "/blog/blog-1.jpg",
+                  "image": "/blog/blog-1.webp",
                   "alt": "Eco-friendly smart home with solar panels",
                   "excerpt": "From solar roofs to connected security, discover how smart technology is redefining comfort and value in modern homes."
                 },
@@ -389,7 +1839,7 @@
                   "category": "Architecture",
                   "date": "Sep 28, 2026",
                   "author": "Admin",
-                  "image": "/blog/blog-2.jpg",
+                  "image": "/blog/blog-2.webp",
                   "alt": "Contemporary dark facade house with reflecting pool",
                   "excerpt": "Open layouts, natural light and seamless indoor-outdoor living — the architectural features buyers love most right now."
                 },
@@ -400,7 +1850,7 @@
                   "category": "Market Trends",
                   "date": "Sep 15, 2026",
                   "author": "Admin",
-                  "image": "/blog/blog-3.jpg",
+                  "image": "/blog/blog-3.webp",
                   "alt": "Luxury apartment building in upscale neighborhood",
                   "excerpt": "Interest rates, demand hotspots and pricing forecasts — everything you need to know before investing this year."
                 },
@@ -411,7 +1861,7 @@
                   "category": "Buying Tips",
                   "date": "Aug 30, 2026",
                   "author": "Admin",
-                  "image": "/properties/premium-residence.jpg",
+                  "image": "/properties/premium-residence.webp",
                   "alt": "Premium residence at twilight",
                   "excerpt": "Budgeting, inspections and negotiation — a step-by-step roadmap to confidently buying your first luxury property."
                 },
@@ -422,7 +1872,7 @@
                   "category": "Investment",
                   "date": "Aug 18, 2026",
                   "author": "Admin",
-                  "image": "/properties/office-space.jpg",
+                  "image": "/properties/office-space.webp",
                   "alt": "Modern glass office building",
                   "excerpt": "Hybrid work has reshaped commercial real estate. Here's where the new opportunities lie for savvy investors."
                 },
@@ -433,134 +1883,637 @@
                   "category": "Selling Tips",
                   "date": "Aug 02, 2026",
                   "author": "Admin",
-                  "image": "/properties/luxury-villa.jpg",
+                  "image": "/properties/luxury-villa.webp",
                   "alt": "Staged luxury villa with pool",
                   "excerpt": "Small, strategic upgrades that help buyers fall in love with your property — and raise your final sale price."
+                },
+                {
+                  "id": "waterfront-living",
+                  "slug": "the-rise-of-waterfront-living",
+                  "title": "The Rise of Waterfront Living",
+                  "category": "Lifestyle",
+                  "date": "Jul 21, 2026",
+                  "author": "Admin",
+                  "image": "/hero/hero.webp",
+                  "alt": "Modern villa with infinity pool at night",
+                  "excerpt": "Private docks, open horizons and resort-style amenities — why waterfront homes remain the ultimate luxury address."
+                },
+                {
+                  "id": "interior-trends",
+                  "slug": "luxury-interior-trends-to-watch",
+                  "title": "Luxury Interior Trends to Watch",
+                  "category": "Interior Design",
+                  "date": "Jul 09, 2026",
+                  "author": "Admin",
+                  "image": "/about/interior.webp",
+                  "alt": "Luxury penthouse living room with city skyline view",
+                  "excerpt": "Warm minimalism, sculptural lighting and natural textures are redefining how premium homes look and feel inside."
+                },
+                {
+                  "id": "luxury-investment-benefits",
+                  "slug": "top-7-benefits-of-investing-in-luxury-real-estate",
+                  "title": "Top 7 Benefits of Investing in Luxury Real Estate",
+                  "category": "Investment",
+                  "date": "Jun 26, 2026",
+                  "author": "Admin",
+                  "image": "/property-details/skyline-villa-main.webp",
+                  "alt": "Modern luxury villa with infinity pool overlooking a city skyline at dusk",
+                  "excerpt": "From long-term value appreciation to an exclusive lifestyle, discover why luxury real estate remains a preferred choice for discerning buyers."
+                },
+                {
+                  "id": "sustainable-design",
+                  "slug": "sustainable-design-in-premium-homes",
+                  "title": "Sustainable Design in Premium Homes",
+                  "category": "Architecture",
+                  "date": "Jun 12, 2026",
+                  "author": "Admin",
+                  "image": "/about/about-2.webp",
+                  "alt": "Minimalist white retreat with pool at sunset",
+                  "excerpt": "Passive cooling, recycled materials and green roofs prove that luxury and sustainability can live under one roof."
+                },
+                {
+                  "id": "property-valuation",
+                  "slug": "how-to-price-your-property-right",
+                  "title": "How to Price Your Property Right",
+                  "category": "Selling Tips",
+                  "date": "May 30, 2026",
+                  "author": "Admin",
+                  "image": "/about/about-1.webp",
+                  "alt": "Three-story modern family home",
+                  "excerpt": "Overpricing costs time, underpricing costs money. Learn how expert valuation finds the price that sells."
+                },
+                {
+                  "id": "penthouse-guide",
+                  "slug": "what-makes-a-penthouse-truly-premium",
+                  "title": "What Makes a Penthouse Truly Premium",
+                  "category": "Buying Tips",
+                  "date": "May 14, 2026",
+                  "author": "Admin",
+                  "image": "/property-details/skyline-villa-terrace.webp",
+                  "alt": "Terrace with infinity pool overlooking a city skyline at sunset",
+                  "excerpt": "Views, privacy and bespoke amenities — the key features that separate an ordinary top floor from a true penthouse."
                 }
-              ]
+              ],
+              "default_author": "Admin"
+            },
+            "blog_detail": {
+              "recent_posts_title": "Recent Posts",
+              "recent_posts_count": 3
             },
             "blog_details": {
               "smart-living-is-the-new-future-of-homes": {
+                "eyebrow": "Lifestyle Insights",
                 "category": "Lifestyle",
-                "date": "Oct 12, 2026",
-                "author": "Vorix Editorial Team",
+                "date": "October 12, 2026",
+                "author": "Admin",
+                "read_time": "5 Min Read",
                 "title": "Smart Living Is the New Future of Homes",
-                "hero_image": "/blog/blog-1.jpg",
+                "hero_image": "/blog/blog-1.webp",
                 "hero_alt": "Eco-friendly smart home with solar panels",
-                "intro": "Smart technology has moved from a luxury add-on to an expectation. Today's buyers want homes that save energy, stay secure and adapt to the way they live.",
-                "quote": "A smart home isn't about gadgets — it's about giving you back time, comfort and peace of mind.",
+                "intro": [
+                  "Smart technology has moved from a luxury add-on to an everyday expectation. Today's buyers want homes that save energy, stay secure and quietly adapt to the way they live — without complicated controls or endless apps.",
+                  "Whether you are building, renovating or searching for your next residence, understanding smart living helps you choose a home that stays comfortable, efficient and valuable for years. Here is how intelligent design is reshaping modern homes."
+                ],
                 "sections": [
-                  { "title": "Energy That Pays You Back", "paragraph": "Solar panels, battery storage and intelligent thermostats can cut utility bills dramatically while increasing resale value. Buyers increasingly compare homes by their long-term running costs." },
-                  { "title": "Security Without Compromise", "paragraph": "Connected cameras, smart locks and app-based monitoring let homeowners keep an eye on their property from anywhere — a feature that now ranks among the top requests from families." },
-                  { "title": "Designed Around Your Routine", "paragraph": "Automated lighting, climate zones and voice control create spaces that respond to you. The result is a home that feels effortless every single day." }
+                  {
+                    "title": "Energy That Pays You Back",
+                    "paragraph": "Solar panels, battery storage and intelligent thermostats can cut utility bills dramatically while increasing resale value. Buyers now compare homes by their long-term running costs as closely as by their finishes."
+                  },
+                  {
+                    "title": "Security Without Compromise",
+                    "paragraph": "Connected cameras, smart locks and app-based monitoring let homeowners keep an eye on their property from anywhere — a feature that now ranks among the top requests from families and frequent travellers."
+                  },
+                  {
+                    "title": "Designed Around Your Routine",
+                    "paragraph": "Automated lighting, climate zones and voice control create spaces that respond to you. The result is a home that feels effortless every single day, from the first coffee to the last light switched off."
+                  }
                 ]
               },
               "design-elements-defining-modern-homes": {
+                "eyebrow": "Design & Architecture",
                 "category": "Architecture",
-                "date": "Sep 28, 2026",
-                "author": "Vorix Editorial Team",
+                "date": "September 28, 2026",
+                "author": "Admin",
+                "read_time": "4 Min Read",
                 "title": "Design Elements Defining Modern Homes",
-                "hero_image": "/blog/blog-2.jpg",
+                "hero_image": "/blog/blog-2.webp",
                 "hero_alt": "Contemporary dark facade house with reflecting pool",
-                "intro": "Modern architecture is all about clarity, light and connection. These are the design choices shaping the most sought-after homes on the market.",
-                "quote": "Great design disappears — what remains is how a space makes you feel.",
+                "intro": [
+                  "Modern architecture is all about clarity, light and connection. The most sought-after homes on the market share a set of design choices that make them feel open, calm and timeless the moment you step inside.",
+                  "If you are planning a new build or comparing listings, knowing these elements helps you recognise genuine quality — and the features that will keep a home desirable when it is time to sell."
+                ],
                 "sections": [
-                  { "title": "Floor-to-Ceiling Glass", "paragraph": "Expansive glazing floods interiors with daylight and frames the landscape like art, blurring the line between inside and out." },
-                  { "title": "Open, Flexible Layouts", "paragraph": "Kitchens, living and dining areas flow together, giving families room to gather while remaining adaptable for work and entertaining." },
-                  { "title": "Natural, Honest Materials", "paragraph": "Stone, timber and concrete add warmth and texture, aging beautifully and reducing long-term maintenance." }
+                  {
+                    "title": "Floor-to-Ceiling Glass",
+                    "paragraph": "Expansive glazing floods interiors with daylight and frames the landscape like art, blurring the line between inside and out while making every room feel larger than its footprint."
+                  },
+                  {
+                    "title": "Open, Flexible Layouts",
+                    "paragraph": "Kitchens, living and dining areas flow together, giving families room to gather while remaining adaptable for remote work, entertaining and the changing needs of a growing household."
+                  },
+                  {
+                    "title": "Natural, Honest Materials",
+                    "paragraph": "Stone, timber and concrete add warmth and texture, ageing beautifully over time and reducing long-term maintenance compared with trend-driven finishes."
+                  }
                 ]
               },
               "luxury-real-estate-market-outlook-2026": {
+                "eyebrow": "Market Insights",
                 "category": "Market Trends",
-                "date": "Sep 15, 2026",
-                "author": "Vorix Research Desk",
+                "date": "September 15, 2026",
+                "author": "Admin",
+                "read_time": "6 Min Read",
                 "title": "Luxury Real Estate Market Outlook 2026",
-                "hero_image": "/blog/blog-3.jpg",
+                "hero_image": "/blog/blog-3.webp",
                 "hero_alt": "Luxury apartment building in upscale neighborhood",
-                "intro": "The luxury segment continues to show resilience. Here's our take on where prices, demand and opportunities are heading this year.",
-                "quote": "In every market cycle, quality locations remain the strongest store of value.",
+                "intro": [
+                  "The luxury segment continues to show remarkable resilience. Even as wider markets adjust to changing interest rates, prime homes in the world's most desirable locations remain in high demand.",
+                  "In this outlook we look at where prices, demand and opportunities are heading this year — and what buyers, sellers and investors should keep in mind before making their next move."
+                ],
                 "sections": [
-                  { "title": "Demand Remains Strong", "paragraph": "Limited inventory in prime neighborhoods keeps competition high, particularly for move-in-ready homes with modern amenities." },
-                  { "title": "Rates and Affordability", "paragraph": "Stabilizing interest rates are bringing sidelined buyers back, with cash purchasers still accounting for a large share of luxury deals." },
-                  { "title": "Where to Look Next", "paragraph": "Emerging suburbs with strong infrastructure investment offer attractive entry points and solid appreciation potential." }
+                  {
+                    "title": "Demand Remains Strong",
+                    "paragraph": "Limited inventory in prime neighbourhoods keeps competition high, particularly for move-in-ready homes with modern amenities, outdoor space and strong security."
+                  },
+                  {
+                    "title": "Rates and Affordability",
+                    "paragraph": "Stabilising interest rates are bringing sidelined buyers back to the market, while cash purchasers continue to account for a large share of luxury transactions."
+                  },
+                  {
+                    "title": "Where to Look Next",
+                    "paragraph": "Emerging suburbs with major infrastructure investment offer attractive entry points and solid appreciation potential for buyers willing to look just beyond the established hotspots."
+                  }
                 ]
               },
               "first-time-buyer-guide-to-premium-homes": {
+                "eyebrow": "Buyer's Guide",
                 "category": "Buying Tips",
-                "date": "Aug 30, 2026",
-                "author": "Vorix Advisory Team",
+                "date": "August 30, 2026",
+                "author": "Admin",
+                "read_time": "5 Min Read",
                 "title": "A First-Time Buyer's Guide to Premium Homes",
-                "hero_image": "/properties/premium-residence.jpg",
+                "hero_image": "/properties/premium-residence.webp",
                 "hero_alt": "Premium residence at twilight",
-                "intro": "Buying your first premium home is exciting — and a big decision. This roadmap helps you move forward with confidence.",
-                "quote": "Preparation turns a stressful purchase into a rewarding milestone.",
+                "intro": [
+                  "Buying your first premium home is exciting — and one of the biggest financial decisions you will ever make. A clear plan turns a potentially stressful process into a rewarding milestone.",
+                  "This step-by-step roadmap covers budgeting, inspections and negotiation so you can move forward with confidence and avoid the most common first-time buyer mistakes."
+                ],
                 "sections": [
-                  { "title": "Know Your Real Budget", "paragraph": "Factor in taxes, insurance, maintenance and association fees alongside your mortgage to understand the true monthly cost." },
-                  { "title": "Never Skip Inspections", "paragraph": "A thorough inspection protects your investment and often provides leverage during negotiation." },
-                  { "title": "Work With Specialists", "paragraph": "An experienced agent brings off-market access, pricing insight and negotiation skills that save time and money." }
+                  {
+                    "title": "Know Your Real Budget",
+                    "paragraph": "Factor in taxes, insurance, maintenance and association fees alongside your mortgage to understand the true monthly cost of ownership before you start viewing homes."
+                  },
+                  {
+                    "title": "Never Skip Inspections",
+                    "paragraph": "A thorough independent inspection protects your investment, uncovers hidden issues and often gives you valuable leverage during price negotiations."
+                  },
+                  {
+                    "title": "Work With Specialists",
+                    "paragraph": "An experienced agent brings off-market access, accurate pricing insight and negotiation skills that save you time, money and unnecessary risk."
+                  }
                 ]
               },
               "why-office-spaces-are-a-smart-investment": {
+                "eyebrow": "Investment Insights",
                 "category": "Investment",
-                "date": "Aug 18, 2026",
-                "author": "Vorix Research Desk",
+                "date": "August 18, 2026",
+                "author": "Admin",
+                "read_time": "5 Min Read",
                 "title": "Why Office Spaces Are a Smart Investment",
-                "hero_image": "/properties/office-space.jpg",
+                "hero_image": "/properties/office-space.webp",
                 "hero_alt": "Modern glass office building",
-                "intro": "Commercial real estate is evolving fast. Flexible, well-located office spaces are emerging as a compelling opportunity.",
-                "quote": "The office isn't dead — it's being redesigned for how people actually work.",
+                "intro": [
+                  "Commercial real estate is evolving fast. Hybrid work has changed how companies use space, but well-located, high-quality offices are emerging as a compelling opportunity for investors.",
+                  "Understanding the forces behind this shift helps you identify assets with stable income and long-term growth potential. Here is why office space deserves a place in a balanced portfolio."
+                ],
                 "sections": [
-                  { "title": "Flight to Quality", "paragraph": "Companies are consolidating into premium, amenity-rich buildings, driving demand for modern Class-A spaces." },
-                  { "title": "Stable, Long-Term Leases", "paragraph": "Commercial tenants typically sign multi-year leases, offering predictable income streams for investors." },
-                  { "title": "Flexible Workspace Demand", "paragraph": "Co-working and hybrid-ready layouts attract startups and enterprises alike, keeping occupancy strong." }
+                  {
+                    "title": "Flight to Quality",
+                    "paragraph": "Companies are consolidating into premium, amenity-rich buildings, driving demand and rental growth for modern Class-A spaces in central business districts."
+                  },
+                  {
+                    "title": "Stable, Long-Term Leases",
+                    "paragraph": "Commercial tenants typically sign multi-year leases, offering predictable income streams and lower turnover compared with many residential investments."
+                  },
+                  {
+                    "title": "Flexible Workspace Demand",
+                    "paragraph": "Co-working and hybrid-ready layouts attract startups and enterprises alike, keeping occupancy strong in buildings that offer flexibility and great amenities."
+                  }
                 ]
               },
               "home-staging-tips-to-sell-faster": {
+                "eyebrow": "Seller's Guide",
                 "category": "Selling Tips",
-                "date": "Aug 02, 2026",
-                "author": "Vorix Advisory Team",
+                "date": "August 2, 2026",
+                "author": "Admin",
+                "read_time": "4 Min Read",
                 "title": "Home Staging Tips to Sell Faster",
-                "hero_image": "/properties/luxury-villa.jpg",
+                "hero_image": "/properties/luxury-villa.webp",
                 "hero_alt": "Staged luxury villa with pool",
-                "intro": "First impressions sell homes. Thoughtful staging helps buyers picture their life in your space — and pay more for it.",
-                "quote": "Buyers don't purchase a house; they purchase the life they imagine inside it.",
+                "intro": [
+                  "First impressions sell homes. Buyers decide within seconds whether a property feels right, and thoughtful staging helps them picture their own life in your space.",
+                  "The good news is that staging does not require a full renovation. These small, strategic upgrades help your property stand out online and in person — and can raise your final sale price."
+                ],
                 "sections": [
-                  { "title": "Declutter and Depersonalize", "paragraph": "Clear surfaces and neutral décor make rooms feel larger and let buyers imagine their own belongings in place." },
-                  { "title": "Light Every Corner", "paragraph": "Open curtains, add warm lamps and replace dim bulbs so every room feels bright and welcoming in photos and viewings." },
-                  { "title": "Boost Curb Appeal", "paragraph": "Fresh landscaping, a clean entrance and outdoor lighting create a memorable first impression before buyers step inside." }
+                  {
+                    "title": "Declutter and Depersonalise",
+                    "paragraph": "Clear surfaces and neutral décor make rooms feel larger and let buyers imagine their own belongings in place instead of focusing on yours."
+                  },
+                  {
+                    "title": "Light Every Corner",
+                    "paragraph": "Open curtains, add warm lamps and replace dim bulbs so every room feels bright and welcoming in listing photos and during viewings."
+                  },
+                  {
+                    "title": "Boost Curb Appeal",
+                    "paragraph": "Fresh landscaping, a clean entrance and soft outdoor lighting create a memorable first impression before buyers even step inside."
+                  }
+                ]
+              },
+              "the-rise-of-waterfront-living": {
+                "eyebrow": "Lifestyle Insights",
+                "category": "Lifestyle",
+                "date": "July 21, 2026",
+                "author": "Admin",
+                "read_time": "5 Min Read",
+                "title": "The Rise of Waterfront Living",
+                "hero_image": "/hero/hero.webp",
+                "hero_alt": "Modern villa with infinity pool at night",
+                "intro": [
+                  "Waterfront homes offer something no other address can — endless views, a calming natural setting and a lifestyle centred around the water. It is no surprise they remain the ultimate luxury address.",
+                  "From private docks to resort-style amenities, here is why demand for waterfront living keeps rising and what to consider before you buy a home on the water."
+                ],
+                "sections": [
+                  {
+                    "title": "Scarcity Drives Value",
+                    "paragraph": "Coastlines and lakefronts are finite, which is why waterfront properties consistently hold their value and often outperform inland homes over time."
+                  },
+                  {
+                    "title": "Resort Living at Home",
+                    "paragraph": "Private docks, infinity pools and beach access turn everyday routines into a holiday, making these homes highly desirable for families and premium holiday rentals."
+                  },
+                  {
+                    "title": "What to Check Before Buying",
+                    "paragraph": "Review flood zoning, insurance costs and shoreline regulations early so your dream home remains a sound long-term investment."
+                  }
+                ]
+              },
+              "luxury-interior-trends-to-watch": {
+                "eyebrow": "Interior Insights",
+                "category": "Interior Design",
+                "date": "July 9, 2026",
+                "author": "Admin",
+                "read_time": "4 Min Read",
+                "title": "Luxury Interior Trends to Watch",
+                "hero_image": "/about/interior.webp",
+                "hero_alt": "Luxury penthouse living room with city skyline view",
+                "intro": [
+                  "Today's luxury interiors are calmer, warmer and more personal than ever. Flashy statements are giving way to quiet craftsmanship, natural materials and spaces designed for real living.",
+                  "Whether you are furnishing a new residence or preparing a property for sale, these are the interior trends shaping the most admired homes this year."
+                ],
+                "sections": [
+                  {
+                    "title": "Warm Minimalism",
+                    "paragraph": "Clean lines remain, but cold whites are giving way to soft neutrals, textured plaster and warm timber for a more inviting, lived-in feel."
+                  },
+                  {
+                    "title": "Sculptural Lighting",
+                    "paragraph": "Statement pendants and layered ambient lighting act as art pieces while creating the right mood from morning to evening."
+                  },
+                  {
+                    "title": "Natural Textures",
+                    "paragraph": "Travertine, linen, bouclé and natural stone add depth and tactility, making spaces feel grounded, comfortable and timeless."
+                  }
+                ]
+              },
+              "top-7-benefits-of-investing-in-luxury-real-estate": {
+                "eyebrow": "Real Estate Insights",
+                "category": "Investment",
+                "date": "June 26, 2026",
+                "author": "Admin",
+                "read_time": "6 Min Read",
+                "title": "Top 7 Benefits of Investing in Luxury Real Estate",
+                "hero_image": "/property-details/skyline-villa-main.webp",
+                "hero_alt": "Modern luxury villa with infinity pool overlooking a city skyline at dusk",
+                "intro": [
+                  "Luxury real estate has always been more than just a place to live — it's a statement of lifestyle, financial stability, and long-term vision. In today's dynamic market, high-end properties continue to attract investors and homeowners who value exclusivity, quality, and lasting value.",
+                  "Whether you're looking to diversify your investment portfolio or secure a dream home, luxury real estate offers unique advantages that set it apart from conventional properties. In this article, we explore the top benefits of investing in luxury real estate and why it remains a preferred choice for discerning buyers worldwide."
+                ],
+                "sections": [
+                  {
+                    "title": "Long-Term Value Appreciation",
+                    "paragraph": "Luxury properties are located in prime areas with limited supply, which often leads to stronger and more stable value appreciation over time. These assets tend to hold their value even during economic fluctuations, making them a reliable long-term investment."
+                  },
+                  {
+                    "title": "Exclusive Lifestyle and Comfort",
+                    "paragraph": "Investing in luxury real estate offers access to world-class amenities, superior architecture, and thoughtfully designed spaces. From private pools and smart home features to stunning views and premium finishes, these properties provide an unmatched living experience."
+                  }
+                ]
+              },
+              "sustainable-design-in-premium-homes": {
+                "eyebrow": "Design & Architecture",
+                "category": "Architecture",
+                "date": "June 12, 2026",
+                "author": "Admin",
+                "read_time": "5 Min Read",
+                "title": "Sustainable Design in Premium Homes",
+                "hero_image": "/about/about-2.webp",
+                "hero_alt": "Minimalist white retreat with pool at sunset",
+                "intro": [
+                  "Sustainability is no longer a compromise in luxury real estate — it's a mark of quality, comfort and forward thinking. Today's most desirable homes are designed to tread lightly while living beautifully.",
+                  "From passive cooling to recycled materials and green roofs, here is how premium homes are proving that luxury and sustainability can live comfortably under one roof."
+                ],
+                "sections": [
+                  {
+                    "title": "Passive Design First",
+                    "paragraph": "Smart orientation, deep overhangs and cross-ventilation keep homes naturally cool and bright, reducing energy demand from day one."
+                  },
+                  {
+                    "title": "Responsible Materials",
+                    "paragraph": "Reclaimed timber, low-carbon concrete and locally sourced stone lower environmental impact without sacrificing elegance or durability."
+                  },
+                  {
+                    "title": "Green Technology",
+                    "paragraph": "Solar arrays, battery storage and greywater recycling cut running costs and add measurable value when it is time to sell."
+                  }
+                ]
+              },
+              "how-to-price-your-property-right": {
+                "eyebrow": "Seller's Guide",
+                "category": "Selling Tips",
+                "date": "May 30, 2026",
+                "author": "Admin",
+                "read_time": "4 Min Read",
+                "title": "How to Price Your Property Right",
+                "hero_image": "/about/about-1.webp",
+                "hero_alt": "Three-story modern family home",
+                "intro": [
+                  "Overpricing costs time, underpricing costs money. The right asking price attracts serious buyers quickly and protects your bottom line from the very first day on the market.",
+                  "Here is how property professionals arrive at a price that reflects true market value — and how you can tell early on whether your listing is on target."
+                ],
+                "sections": [
+                  {
+                    "title": "Study Comparable Sales",
+                    "paragraph": "Recent sales of similar homes nearby are the strongest indicator of what buyers are willing to pay today, far more than asking prices or online estimates."
+                  },
+                  {
+                    "title": "Account for Condition",
+                    "paragraph": "Upgrades, finishes and maintenance history can justify a premium, while any needed repairs should be reflected honestly in the price."
+                  },
+                  {
+                    "title": "Watch the First Two Weeks",
+                    "paragraph": "Early viewing numbers and buyer feedback reveal whether your price is right, giving you time to adjust before a listing starts to feel stale."
+                  }
+                ]
+              },
+              "what-makes-a-penthouse-truly-premium": {
+                "eyebrow": "Buyer's Guide",
+                "category": "Buying Tips",
+                "date": "May 14, 2026",
+                "author": "Admin",
+                "read_time": "5 Min Read",
+                "title": "What Makes a Penthouse Truly Premium",
+                "hero_image": "/property-details/skyline-villa-terrace.webp",
+                "hero_alt": "Terrace with infinity pool overlooking a city skyline at sunset",
+                "intro": [
+                  "Not every top-floor apartment is a penthouse. A truly premium penthouse combines breathtaking views, generous private space and a level of service that feels closer to a five-star hotel than an apartment.",
+                  "Before you invest, it pays to know which features genuinely add value. These are the qualities discerning buyers look for at the very top of the market."
+                ],
+                "sections": [
+                  {
+                    "title": "Uninterrupted Views",
+                    "paragraph": "Panoramic, protected views of the skyline or sea are the single biggest driver of penthouse value and long-term desirability."
+                  },
+                  {
+                    "title": "Private Outdoor Space",
+                    "paragraph": "Wraparound terraces, rooftop pools and outdoor kitchens extend the living space and clearly set penthouses apart from the floors below."
+                  },
+                  {
+                    "title": "Privacy and Service",
+                    "paragraph": "Private lifts, a dedicated concierge and very few neighbours deliver the exclusivity buyers expect at this level."
+                  }
                 ]
               }
             },
             "contact": {
-              "eyebrow": "Get In Touch",
-              "title_regular": "Let's Find Your",
-              "title_highlight": "Perfect Property",
-              "description": "Have a question or ready to start your property journey? Reach out and our specialists will get back to you within 24 hours.",
+              "eyebrow": "Let's Connect",
+              "title_regular": "Speak With",
+              "title_highlight": "Our Advisors",
+              "description": "Whether you are looking to buy, sell, or invest in real estate, our team is here to provide expert guidance and personalized support.",
+              "info_title": "Contact Info",
               "info_cards": [
-                { "id": "address", "icon": "map", "title": "Our Office", "lines": ["245 Skyline Avenue, Suite 800", "New York, NY 10001"], "href": "" },
-                { "id": "phone", "icon": "phone", "title": "Call Us", "lines": ["+1 (555) 123-4567", "Mon - Sat, 9am - 7pm"], "href": "tel:+15551234567" },
-                { "id": "email", "icon": "mail", "title": "Email Us", "lines": ["hello@vorixrealestate.com", "sales@vorixrealestate.com"], "href": "mailto:hello@vorixrealestate.com" }
+                {
+                  "id": "phone",
+                  "icon": "phone",
+                  "title": "Phone Office",
+                  "lines": [
+                    "+100000000000",
+                    "Mon – Fri, 9:00 AM – 6:00 PM"
+                  ],
+                  "href": "tel:+100000000000"
+                },
+                {
+                  "id": "email",
+                  "icon": "mail",
+                  "title": "Email",
+                  "lines": [
+                    "info@xyz.com"
+                  ],
+                  "note": "We respond within 24 hours",
+                  "href": "mailto:info@xyz.com"
+                },
+                {
+                  "id": "address",
+                  "icon": "map",
+                  "title": "Office Address",
+                  "lines": [
+                    "123 Education Lane",
+                    "New York, NY 10001",
+                    "United States"
+                  ],
+                  "href": ""
+                }
+              ],
+              "follow_title": "Follow Us",
+              "socials": [
+                {
+                  "name": "Instagram",
+                  "href": "https://instagram.com",
+                  "icon": "instagram",
+                  "aria_label": "Instagram profile"
+                },
+                {
+                  "name": "LinkedIn",
+                  "href": "https://linkedin.com",
+                  "icon": "linkedin",
+                  "aria_label": "LinkedIn profile"
+                },
+                {
+                  "name": "Facebook",
+                  "href": "https://facebook.com",
+                  "icon": "facebook",
+                  "aria_label": "Facebook profile"
+                },
+                {
+                  "name": "X",
+                  "href": "https://x.com",
+                  "icon": "x",
+                  "aria_label": "X profile"
+                }
               ],
               "form": {
-                "title": "Send Us a Message",
                 "name_label": "Full Name",
-                "name_placeholder": "John Doe",
+                "name_placeholder": "Enter your full name",
                 "email_label": "Email Address",
-                "email_placeholder": "john@example.com",
+                "email_placeholder": "Enter your email address",
                 "phone_label": "Phone Number",
-                "phone_placeholder": "+1 (555) 000-0000",
-                "subject_label": "Interested In",
-                "subject_placeholder": "Select a service",
-                "subject_options": ["Buying a Property", "Selling a Property", "Rental & Leasing", "Investment Consulting"],
+                "phone_placeholder": "Enter your phone number",
+                "subject_label": "Subject",
+                "subject_placeholder": "Enter subject",
                 "message_label": "Message",
-                "message_placeholder": "Tell us about your requirements...",
-                "submit_text": "Send Message",
-                "success_message": "Thank you! Our team will contact you shortly."
+                "message_placeholder": "Write your message here...",
+                "submit_text": "Send Inquiry",
+                "success_message": "Thank you! Our advisors will contact you shortly."
               },
               "map": {
-                "title": "Vorix Real Estate office location",
-                "embed_url": "https://www.google.com/maps?q=Empire+State+Building,New+York&output=embed"
+                "title": "Vorix Real Estate office location in New York",
+                "embed_url": "https://www.google.com/maps?q=123+Education+Lane,+New+York,+NY+10001&output=embed"
               }
+            },
+            "enquiry": {
+              "eyebrow": "Enquire Now",
+              "title_regular": "Find Your",
+              "title_highlight": "Ideal Property",
+              "description": "Share your requirements with us and our experts will help you find the right property options tailored to your goals.",
+              "image": "/enquiry/enquiry-villa.webp",
+              "image_alt": "Modern luxury villa with infinity pool glowing at twilight",
+              "features": [
+                {
+                  "icon": "home",
+                  "title": "Curated Property Options",
+                  "description": "Handpicked listings that match your preferences."
+                },
+                {
+                  "icon": "users",
+                  "title": "Expert Assistance",
+                  "description": "Get guidance from our experienced real estate advisors."
+                },
+                {
+                  "icon": "shield",
+                  "title": "End-to-End Support",
+                  "description": "From site visits to documentation, we're with you at every step."
+                },
+                {
+                  "icon": "headset",
+                  "title": "Quick Response",
+                  "description": "We respond to all enquiries within 24 hours."
+                }
+              ],
+              "form": {
+                "name_label": "Full Name",
+                "name_placeholder": "Enter your full name",
+                "email_label": "Email Address",
+                "email_placeholder": "Enter your email address",
+                "phone_label": "Phone Number",
+                "phone_placeholder": "Enter your phone number",
+                "property_type_label": "Property Type",
+                "property_type_placeholder": "Select property type",
+                "property_type_options": [
+                  "Luxury Villa",
+                  "Apartment",
+                  "Penthouse",
+                  "Family House",
+                  "Commercial Office",
+                  "Waterfront Home",
+                  "Plot / Land"
+                ],
+                "location_label": "Preferred Location",
+                "location_placeholder": "Enter preferred location",
+                "budget_label": "Budget Range",
+                "budget_placeholder": "Select budget range",
+                "budget_options": [
+                  "Under $500K",
+                  "$500K – $1M",
+                  "$1M – $2.5M",
+                  "$2.5M – $5M",
+                  "$5M+"
+                ],
+                "message_label": "Your Requirements",
+                "message_placeholder": "Tell us about your property requirements...",
+                "submit_text": "Submit Enquiry",
+                "success_message": "Thank you! Our property experts will get in touch within 24 hours."
+              }
+            },
+            "team": {
+              "eyebrow": "Our Team",
+              "title_regular": "Experienced Minds",
+              "title_highlight": "Driven by Your Goals",
+              "description": "Our team brings together deep market knowledge, strategic insight, and a shared commitment to delivering exceptional real estate experiences.",
+              "members": [
+                {
+                  "id": "daniel-carter",
+                  "name": "Daniel Carter",
+                  "role": "Chief Executive Officer",
+                  "description": "Leads the company with a vision for sustainable growth and exceptional client value.",
+                  "image": "/team/1.webp",
+                  "alt": "Portrait of Daniel Carter, Chief Executive Officer"
+                },
+                {
+                  "id": "olivia-bennett",
+                  "name": "Olivia Bennett",
+                  "role": "Chief Operating Officer",
+                  "description": "Ensures seamless operations and delivery excellence across all business functions.",
+                  "image": "/team/2.webp",
+                  "alt": "Portrait of Olivia Bennett, Chief Operating Officer"
+                },
+                {
+                  "id": "ethan-brooks",
+                  "name": "Ethan Brooks",
+                  "role": "Head of Investments",
+                  "description": "Identifies high-value opportunities and drives strategic investment growth.",
+                  "image": "/team/3.webp",
+                  "alt": "Portrait of Ethan Brooks, Head of Investments"
+                },
+                {
+                  "id": "sophia-reynolds",
+                  "name": "Sophia Reynolds",
+                  "role": "Head of Sales",
+                  "description": "Builds strong client relationships and leads the sales strategy with market insight.",
+                  "image": "/team/5.webp",
+                  "alt": "Portrait of Sophia Reynolds, Head of Sales"
+                },
+                {
+                  "id": "liam-mitchell",
+                  "name": "Liam Mitchell",
+                  "role": "Senior Property Consultant",
+                  "description": "Provides expert guidance to clients in identifying their ideal properties.",
+                  "image": "/team/4.webp",
+                  "alt": "Portrait of Liam Mitchell, Senior Property Consultant"
+                },
+                {
+                  "id": "ava-collins",
+                  "name": "Ava Collins",
+                  "role": "Client Relations Manager",
+                  "description": "Focuses on building long-term client partnerships through trust and transparency.",
+                  "image": "/team/2.webp",
+                  "alt": "Portrait of Ava Collins, Client Relations Manager"
+                },
+                {
+                  "id": "noah-patel",
+                  "name": "Noah Patel",
+                  "role": "Market Research Analyst",
+                  "description": "Delivers data-driven insights to support informed investment decisions.",
+                  "image": "/team/6.webp",
+                  "alt": "Portrait of Noah Patel, Market Research Analyst"
+                },
+                {
+                  "id": "isabella-morgan",
+                  "name": "Isabella Morgan",
+                  "role": "Legal & Compliance Head",
+                  "description": "Ensures all transactions are secure, compliant, and aligned with regulatory standards.",
+                  "image": "/team/5.webp",
+                  "alt": "Portrait of Isabella Morgan, Legal & Compliance Head"
+                }
+              ]
             }
           }
         }

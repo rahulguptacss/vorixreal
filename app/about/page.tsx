@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Header from '../../components/sections/Header';
 import Breadcrumb from '../../components/sections/Breadcrumb';
 import About from '../../components/sections/About';
+import WhyChooseUs from '../../components/sections/WhyChooseUs';
 import Services from '../../components/sections/Services';
 import Testimonials from '../../components/sections/Testimonials';
 import Footer from '../../components/sections/Footer';
@@ -18,8 +19,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const sectionMap: Record<string, React.ReactNode> = {
-    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} />,
-    About: <About data={sections.about} />,
+    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} watermark={pageData.watermark} />,
+    About: <About data={sections.about} showButton={false} showTags={false} />,
+    WhyChooseUs: <WhyChooseUs data={sections.why_choose_us} />,
     Services: <Services data={sections.services} />,
     Testimonials: <Testimonials data={sections.testimonials} />,
   };

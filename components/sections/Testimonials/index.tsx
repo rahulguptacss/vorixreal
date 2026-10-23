@@ -27,6 +27,9 @@ export default function Testimonials({ data }: TestimonialsProps) {
   const total = data.items.length;
   const [[index, direction], setState] = useState<[number, number]>([0, 1]);
   const [timerKey, setTimerKey] = useState(0);
+  const slidesLabel = data.slides_aria_label ?? 'Testimonials';
+  const testimonialLabel = data.testimonial_aria_label ?? 'Show testimonial from';
+  const ratingLabel = data.rating_aria_label ?? 'out of 5 stars';
 
   const goTo = useCallback(
     (next: number, dir: number) => setState([(next + total) % total, dir]),
@@ -155,7 +158,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
                         <div>
                           <p className="font-heading text-lg font-semibold text-foreground">{item.author}</p>
                           <p className="text-sm text-primary/80">{item.role}</p>
-                          <div className="mt-1.5 flex gap-1" aria-label={`${item.rating} out of 5 stars`}>
+                          <div className="mt-1.5 flex gap-1" aria-label={`${item.rating} ${ratingLabel}`}>
                             {Array.from({ length: item.rating }, (_, s) => (
                               <Star key={s} className="h-4 w-4 fill-primary-dark text-primary-dark" />
                             ))}
@@ -170,14 +173,14 @@ export default function Testimonials({ data }: TestimonialsProps) {
 
             {/* Dots + arrows */}
             <div className="mt-6 flex items-center justify-between">
-              <div className="flex items-center gap-2.5" role="tablist" aria-label="Testimonials">
+              <div className="flex items-center gap-2.5" role="tablist" aria-label={slidesLabel}>
                 {data.items.map((item, i) => (
                   <button
                     key={item.id}
                     type="button"
                     role="tab"
                     aria-selected={i === index}
-                    aria-label={`Show testimonial from ${item.author}`}
+                    aria-label={`${testimonialLabel} ${item.author}`}
                     onClick={() => manual(i, i > index ? 1 : -1)}
                     className="flex h-4 w-4 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary/40 cursor-pointer"
                   >

@@ -1,8 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { House, Handshake, KeyRound, TrendingUp, Building, ArrowUpRight, type LucideIcon } from 'lucide-react';
+import { House, Handshake, KeyRound, TrendingUp, Building, type LucideIcon } from 'lucide-react';
 import type { ServicesSectionData } from '../../types';
 import Eyebrow from '../../ui/Eyebrow';
 
@@ -63,20 +62,7 @@ export default function Services({ data }: ServicesProps) {
                 <h3 className="font-heading text-lg sm:text-xl font-semibold leading-snug text-primary-dark mb-3">
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-muted mb-6 flex-1">{item.description}</p>
-                <Link
-                  href={item.href}
-                  aria-label={`${data.read_more_text ?? 'Learn More'}: ${item.title}`}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary"
-                >
-                  <span className="relative">
-                    {data.read_more_text ?? 'Learn More'}
-                    <span className="absolute left-0 -bottom-0.5 h-px w-full origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
-                  </span>
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full border border-primary/20 transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-45">
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-                </Link>
+                <p className="text-sm leading-relaxed text-muted flex-1">{item.description}</p>
               </motion.article>
             );
           })}

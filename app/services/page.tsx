@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   const sectionMap: Record<string, React.ReactNode> = {
-    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} />,
+    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} watermark={pageData.watermark} />,
     Services: <Services data={sections.services} />,
     Properties: <Properties data={sections.properties} variant="slider" />,
     Testimonials: <Testimonials data={sections.testimonials} />,

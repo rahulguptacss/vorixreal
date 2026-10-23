@@ -9,13 +9,17 @@ import Counter from '../../ui/Counter';
 
 interface AboutProps {
   data: AboutSectionData;
+  /** Show the "Learn More" CTA (hidden on the About page itself) */
+  showButton?: boolean;
+  /** Show the tag strip over the interior image */
+  showTags?: boolean;
 }
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export default function About({ data }: AboutProps) {
+export default function About({ data, showButton = true, showTags = true }: AboutProps) {
   return (
-    <section id="about" className="relative w-full bg-white py-14 sm:py-20 overflow-hidden">
+    <section id="about" className="relative w-full bg-white pt-6 sm:pt-10 pb-14 sm:pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
           {/* ── Left column: eyebrow + tagline + tall image ── */}
@@ -114,15 +118,17 @@ export default function About({ data }: AboutProps) {
                 transition={{ duration: 0.9, delay: 0.15, ease }}
                 className="flex flex-col"
               >
-                <div className="space-y-4 text-[15px] sm:text-base leading-relaxed text-muted mb-7">
+                <div className={`space-y-4 text-[15px] sm:text-base leading-relaxed text-muted ${showButton ? 'mb-7' : 'mb-10'}`}>
                   {data.description_paragraphs.map((para) => (
                     <p key={para}>{para}</p>
                   ))}
                 </div>
 
-                <div className="mb-10">
-                  <PrimaryButton href={data.button_link} text={data.button_text} className="px-5 py-3 text-sm" />
-                </div>
+                {showButton && (
+                  <div className="mb-10">
+                    <PrimaryButton href={data.button_link} text={data.button_text} className="px-5 py-3 text-sm" />
+                  </div>
+                )}
 
                 <div className="group relative mt-auto w-full aspect-[4/3] overflow-hidden rounded-[4px] bg-lavender">
                   <Image
@@ -132,7 +138,7 @@ export default function About({ data }: AboutProps) {
                     sizes="(max-width: 768px) 100vw, 360px"
                     className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                   />
-                  {data.tags && data.tags.length > 0 && (
+                  {showTags && data.tags && data.tags.length > 0 && (
                     <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-center gap-2 bg-primary-dark/85 px-3 py-3">
                       {data.tags.map((tag, i) => (
                         <motion.span

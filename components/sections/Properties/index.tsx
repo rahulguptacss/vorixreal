@@ -3,11 +3,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import type { PropertiesSectionData, PropertyItem } from '../../types';
 import Eyebrow from '../../ui/Eyebrow';
 import PrimaryButton from '../../ui/PrimaryButton';
+import Pagination from '../../ui/Pagination';
 
 interface PropertiesProps {
   data: PropertiesSectionData;
@@ -59,6 +60,7 @@ function PropertyCard({ item, ariaLabel, priority = false }: { item: PropertyIte
 }
 
 export default function Properties({ data, variant = 'slider', showButton = true }: PropertiesProps) {
+  const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef(0);
   const stepsRef = useRef(1);
@@ -67,6 +69,24 @@ export default function Properties({ data, variant = 'slider', showButton = true
   const [steps, setSteps] = useState(1);
   const [timerKey, setTimerKey] = useState(0);
   const viewLabel = data.view_aria_label ?? 'View property';
+  const slidesAriaLabel = data.slides_aria_label ?? 'Property slides';
+  const slideAriaLabel = data.slide_aria_label ?? 'Go to slide';
+
+  /* ── Slider shows a capped set; grid paginates the full list ── */
+  const sliderItems = data.items.slice(0, data.homepage_count ?? data.items.length);
+  const perPage = Math.max(1, data.per_page ?? data.items.length);
+  const totalPages = Math.max(1, Math.ceil(data.items.length / perPage));
+  const [page, setPage] = useState(1);
+  const pageStart = (page - 1) * perPage;
+  const pageItems = data.items.slice(pageStart, pageStart + perPage);
+  const labels = data.pagination;
+
+  const changePage = (next: number) => {
+    if (next < 1 || next > totalPages || next === page) return;
+    setPage(next);
+    // Bring the top of the grid back into view so the new page is visible
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   /** One dot per scroll position (items − visible cards + 1), like the screenshot */
   const measure = useCallback(() => {
@@ -127,7 +147,7 @@ export default function Properties({ data, variant = 'slider', showButton = true
   };
 
   return (
-    <section id="properties" className="relative w-full bg-white py-14 sm:py-20 overflow-hidden">
+    <section ref={sectionRef} id="properties" className="relative w-full bg-white py-14 sm:py-20 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Heading row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-10 sm:mb-12">
@@ -183,7 +203,7 @@ export default function Properties({ data, variant = 'slider', showButton = true
               onPointerLeave={endDrag}
               className="no-scrollbar -mx-1.5 flex snap-x snap-mandatory overflow-x-auto"
             >
-              {data.items.map((item, idx) => (
+              {sliderItems.map((item, idx) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 40 }}
@@ -198,14 +218,14 @@ export default function Properties({ data, variant = 'slider', showButton = true
             </div>
 
             {/* Pagination dots */}
-            <div className="mt-8 flex items-center justify-center gap-2.5" role="tablist" aria-label="Property slides">
+            <div className="mt-8 flex items-center justify-center gap-2.5" role="tablist" aria-label={slidesAriaLabel}>
               {Array.from({ length: steps }, (_, i) => (
                 <button
                   key={i}
                   type="button"
                   role="tab"
                   onClick={() => handleDot(i)}
-                  aria-label={`Go to slide ${i + 1}`}
+                  aria-label={`${slideAriaLabel} ${i + 1}`}
                   aria-selected={active === i}
                   className="flex h-4 items-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 cursor-pointer"
                 >
@@ -221,18 +241,40 @@ export default function Properties({ data, variant = 'slider', showButton = true
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {data.items.map((item, idx) => (
+          <div>
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.7, delay: (idx % 3) * 0.12, ease }}
+                key={page}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.45, ease }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
               >
-                <PropertyCard item={item} ariaLabel={viewLabel} priority={idx < 3} />
+                {pageItems.map((item, idx) => (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-40px' }}
+                    transition={{ duration: 0.7, delay: (idx % 3) * 0.12, ease }}
+                  >
+                    <PropertyCard item={item} ariaLabel={viewLabel} priority={page === 1 && idx < 3} />
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
+            </AnimatePresence>
+
+            <Pagination
+              page={page}
+              totalPages={totalPages}
+              totalItems={data.items.length}
+              pageStart={pageStart}
+              pageCount={pageItems.length}
+              onChange={changePage}
+              labels={labels}
+              layoutId="properties-page-indicator"
+            />
           </div>
         )}
       </div>

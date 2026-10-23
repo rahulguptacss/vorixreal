@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const sectionMap: Record<string, React.ReactNode> = {
-    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} />,
+    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} watermark={pageData.watermark} />,
     Contact: <Contact data={sections.contact} />,
   };
 

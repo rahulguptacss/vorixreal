@@ -1,12 +1,14 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, CircleUser, Folder } from 'lucide-react';
 import type { BlogSectionData } from '../../types';
 import Eyebrow from '../../ui/Eyebrow';
 import PrimaryButton from '../../ui/PrimaryButton';
+import Pagination from '../../ui/Pagination';
 
 interface BlogProps {
   data: BlogSectionData;
@@ -24,12 +26,29 @@ function splitDate(date: string) {
 }
 
 export default function Blog({ data, limit, showButton = true }: BlogProps) {
-  const posts = typeof limit === 'number' ? data.posts.slice(0, limit) : data.posts;
+  const sectionRef = useRef<HTMLElement>(null);
   const readMore = data.read_more_text ?? 'Read More';
   const authorPrefix = data.author_prefix ?? 'By';
+  const defaultAuthor = data.default_author ?? 'Admin';
+
+  /* ── Homepage shows a fixed number of posts; the blog page paginates the full list ── */
+  const paginated = typeof limit !== 'number';
+  const allPosts = paginated ? data.posts : data.posts.slice(0, limit);
+  const perPage = paginated ? Math.max(1, data.per_page ?? allPosts.length) : allPosts.length;
+  const totalPages = Math.max(1, Math.ceil(allPosts.length / perPage));
+  const [page, setPage] = useState(1);
+  const pageStart = (page - 1) * perPage;
+  const posts = allPosts.slice(pageStart, pageStart + perPage);
+
+  const changePage = (next: number) => {
+    if (next < 1 || next > totalPages || next === page) return;
+    setPage(next);
+    // Bring the top of the section back into view so the new page is visible
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
-    <section id="blog" className="relative w-full bg-white py-14 sm:py-20 overflow-hidden">
+    <section ref={sectionRef} id="blog" className="relative w-full bg-white py-14 sm:py-20 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* ── Heading row ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-10 sm:mb-12">
@@ -77,7 +96,15 @@ export default function Blog({ data, limit, showButton = true }: BlogProps) {
         </div>
 
         {/* ── Posts grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-4 lg:gap-4">
+        <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={page}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.45, ease }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-4 lg:gap-4"
+        >
           {posts.map((post, idx) => {
             const { day, month } = splitDate(post.date);
             const href = `/blog/${post.slug}`;
@@ -117,7 +144,7 @@ export default function Blog({ data, limit, showButton = true }: BlogProps) {
                   <div className="mb-3 flex flex-wrap items-center gap-x-5 gap-y-1 text-[13px] text-primary-dark/80">
                     <span className="inline-flex items-center gap-2">
                       <CircleUser className="h-3.5 w-3.5" strokeWidth={1.75} />
-                      {authorPrefix} {post.author ?? 'Admin'}
+                      {authorPrefix} {post.author ?? defaultAuthor}
                     </span>
                     <span className="inline-flex items-center gap-2">
                       <Folder className="h-3.5 w-3.5" strokeWidth={1.75} />
@@ -145,7 +172,21 @@ export default function Blog({ data, limit, showButton = true }: BlogProps) {
               </motion.article>
             );
           })}
-        </div>
+        </motion.div>
+        </AnimatePresence>
+
+        {paginated && (
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            totalItems={allPosts.length}
+            pageStart={pageStart}
+            pageCount={posts.length}
+            onChange={changePage}
+            labels={data.pagination}
+            layoutId="blog-page-indicator"
+          />
+        )}
       </div>
     </section>
   );

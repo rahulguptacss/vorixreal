@@ -3,114 +3,149 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { ArrowLeft, CalendarDays, Quote, Tag, User } from 'lucide-react';
-import type { BlogDetailSectionData } from '../../types';
+import { CalendarDays, Clock, Folder, User } from 'lucide-react';
+import type { BlogDetailLabels, BlogDetailSectionData, RecentPostItem } from '../../types';
 
 interface BlogDetailProps {
   data: BlogDetailSectionData;
-  backHref?: string;
-  backText?: string;
+  labels: BlogDetailLabels;
+  recentPosts: RecentPostItem[];
+  authorPrefix?: string;
 }
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export default function BlogDetail({ data, backHref = '/blog', backText = 'Back to Blog' }: BlogDetailProps) {
+export default function BlogDetail({ data, labels, recentPosts, authorPrefix = 'By' }: BlogDetailProps) {
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
 
+  const meta = [
+    { icon: CalendarDays, text: data.date },
+    { icon: User, text: `${authorPrefix} ${data.author}` },
+    { icon: Folder, text: data.category },
+    { icon: Clock, text: data.read_time },
+  ];
+
   return (
-    <article className="relative w-full bg-white py-12 sm:py-16">
+    <section className="relative w-full bg-white py-14 sm:py-20">
       {/* Reading progress bar */}
       <motion.div style={{ scaleX: progress }} className="fixed top-0 inset-x-0 z-[60] h-1 origin-left bg-primary" />
 
-      <div className="max-w-4xl mx-auto px-5 sm:px-8">
-        <motion.header
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease }}
-          className="mb-8"
-        >
-          <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-lavender px-3 py-1 font-medium text-primary">
-              <Tag className="h-3.5 w-3.5" />
-              {data.category}
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CalendarDays className="h-4 w-4 text-primary" />
-              {data.date}
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <User className="h-4 w-4 text-primary" />
-              {data.author}
-            </span>
-          </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.15] tracking-tight text-primary-dark">
-            {data.title}
-          </h2>
-        </motion.header>
-
-        <motion.div
-          initial={{ opacity: 0, clipPath: 'inset(8% 6% 8% 6% round 24px)' }}
-          animate={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0% round 24px)' }}
-          transition={{ duration: 1, delay: 0.15, ease }}
-          className="relative mb-10 aspect-[16/9] w-full overflow-hidden rounded-[24px] bg-lavender shadow-[0_30px_70px_-30px_rgba(27,20,96,0.5)]"
-        >
-          <Image src={data.hero_image} alt={data.hero_alt} fill priority sizes="(max-width: 896px) 100vw, 896px" className="object-cover" />
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease }}
-          className="text-lg leading-relaxed text-foreground/80 mb-10"
-        >
-          {data.intro}
-        </motion.p>
-
-        <div className="space-y-9">
-          {data.sections.map((section, idx) => (
-            <motion.section
-              key={section.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.6, ease }}
-            >
-              <h3 className="mb-3 flex items-center gap-3 font-heading text-xl sm:text-2xl font-semibold text-primary-dark">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
-                {section.title}
-              </h3>
-              <p className="text-[15px] sm:text-base leading-relaxed text-muted">{section.paragraph}</p>
-            </motion.section>
-          ))}
-        </div>
-
-        {data.quote && (
-          <motion.blockquote
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_340px] xl:gap-16">
+        {/* ── Article ── */}
+        <article className="min-w-0">
+          <motion.header
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease }}
-            className="relative mt-12 overflow-hidden rounded-[22px] bg-navy px-7 py-9 sm:px-10 text-white"
           >
-            <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-primary-light/40 blur-3xl" />
-            <Quote className="relative mb-4 h-8 w-8 text-white/60" />
-            <p className="relative font-heading text-xl sm:text-2xl font-light leading-relaxed">{data.quote}</p>
-          </motion.blockquote>
-        )}
+            <span className="inline-block border-b border-primary-dark/40 pb-0.5 text-[12px] font-medium tracking-wide text-primary-dark">
+              {data.eyebrow}
+            </span>
+            <h2 className="mt-5 max-w-[15em] font-serif text-[36px] sm:text-[46px] lg:text-[52px] font-medium leading-[1.08] text-primary-dark">
+              {data.title}
+            </h2>
 
-        <div className="mt-12 border-t border-primary/10 pt-8">
-          <Link
-            href={backHref}
-            className="group inline-flex items-center gap-2 text-sm font-medium text-primary"
+            <ul className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-2 text-[13px] text-muted">
+              {meta.map(({ icon: Icon, text }) => (
+                <li key={text} className="inline-flex items-center gap-2">
+                  <Icon className="h-[15px] w-[15px] text-primary-dark" strokeWidth={1.7} />
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </motion.header>
+
+          <motion.div
+            initial={{ opacity: 0, clipPath: 'inset(6% 4% 6% 4%)' }}
+            animate={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
+            transition={{ duration: 1, delay: 0.15, ease }}
+            className="group relative mt-8 aspect-[16/10] sm:aspect-[13/5] w-full overflow-hidden bg-lavender"
           >
-            <ArrowLeft className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
-            {backText}
-          </Link>
-        </div>
+            <Image
+              src={data.hero_image}
+              alt={data.hero_alt}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 860px"
+              className="object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-[1.04]"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease }}
+            className="mt-8 space-y-5"
+          >
+            {data.intro.map((para) => (
+              <p key={para.slice(0, 32)} className="text-[15px] sm:text-base leading-relaxed text-muted">
+                {para}
+              </p>
+            ))}
+          </motion.div>
+
+          <div className="mt-10">
+            {data.sections.map((section) => (
+              <motion.section
+                key={section.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, ease }}
+                className="border-b border-primary/12 py-8 first:pt-2"
+              >
+                <h3 className="font-serif text-[28px] sm:text-[34px] font-medium leading-[1.15] text-primary-dark">
+                  {section.title}
+                </h3>
+                <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-muted">{section.paragraph}</p>
+              </motion.section>
+            ))}
+          </div>
+        </article>
+
+        {/* ── Sidebar: Recent posts ── */}
+        {recentPosts.length > 0 && (
+          <motion.aside
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.25, ease }}
+            className="self-start bg-lavender px-6 py-7 sm:px-7 lg:sticky lg:top-28"
+          >
+            <h3 className="font-serif text-[26px] sm:text-[28px] font-medium leading-none text-primary-dark">
+              {labels.recent_posts_title}
+            </h3>
+            <ul className="mt-7 space-y-6">
+              {recentPosts.map((post, idx) => (
+                <motion.li
+                  key={post.slug}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 + idx * 0.1, ease }}
+                >
+                  <Link href={`/blog/${post.slug}`} className="group flex items-center gap-4">
+                    <span className="relative h-[76px] w-[76px] shrink-0 overflow-hidden bg-white">
+                      <Image
+                        src={post.image}
+                        alt={post.alt}
+                        fill
+                        sizes="76px"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block font-heading text-[14px] font-medium leading-snug text-primary-dark line-clamp-3 transition-colors duration-300 group-hover:text-primary">
+                        {post.title}
+                      </span>
+                      <span className="mt-1.5 block text-[12px] text-muted">{post.date}</span>
+                    </span>
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.aside>
+        )}
       </div>
-    </article>
+    </section>
   );
 }

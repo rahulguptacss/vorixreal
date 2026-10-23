@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useState, type FormEvent, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CircleCheck, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { ArrowRight, CircleCheck, Mail, MapPin, Phone } from 'lucide-react';
 import type { ContactSectionData } from '../../types';
-import Eyebrow from '../../ui/Eyebrow';
+import SocialIcon from '../../ui/SocialIcon';
 
 interface ContactProps {
   data: ContactSectionData;
@@ -13,8 +13,33 @@ interface ContactProps {
 const iconMap = { map: MapPin, phone: Phone, mail: Mail } as const;
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const inputClass =
-  'w-full rounded-xl border border-primary/15 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 outline-none transition-all duration-200 focus:border-primary focus:ring-4 focus:ring-primary/10';
+/** Underline-only fields like the screenshot */
+const fieldClass =
+  'peer w-full border-0 border-b border-primary-dark/20 bg-transparent px-0 py-2.5 text-[14px] text-foreground placeholder:text-muted/70 outline-none transition-colors duration-300 focus:border-primary-dark';
+
+function Field({
+  id,
+  label,
+  children,
+  className = '',
+}: {
+  id: string;
+  label: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`group relative ${className}`}>
+      <label htmlFor={id} className="block text-[13px] font-medium text-primary-dark">
+        {label}
+        <span className="text-primary-dark">*</span>
+      </label>
+      {children}
+      {/* Animated focus underline */}
+      <span className="pointer-events-none absolute bottom-0 left-0 h-[1.5px] w-full origin-left scale-x-0 bg-primary-dark transition-transform duration-500 ease-out group-focus-within:scale-x-100" />
+    </div>
+  );
+}
 
 export default function Contact({ data }: ContactProps) {
   const { form } = data;
@@ -29,119 +54,113 @@ export default function Contact({ data }: ContactProps) {
 
   return (
     <section id="contact" className="relative w-full bg-white py-14 sm:py-20">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-          {/* Info column */}
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16 xl:gap-24">
+          {/* ── Left: heading + form ── */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.8, ease }}
-            className="lg:col-span-5"
+            className="min-w-0"
           >
-            <Eyebrow text={data.eyebrow} />
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl leading-[1.12] tracking-tight text-primary-dark mb-4">
-              <span className="block font-light">{data.title_regular}</span>
-              <span className="block font-semibold text-primary-gradient">{data.title_highlight}</span>
-            </h2>
-            <p className="text-[15px] leading-relaxed text-muted mb-8">{data.description}</p>
+            <span className="relative inline-block pb-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary-dark">
+              {data.eyebrow}
+              <motion.span
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2, ease }}
+                className="absolute bottom-0 left-0 h-px w-[calc(100%+1.5rem)] origin-left bg-primary-dark/50"
+              />
+            </span>
 
-            <div className="space-y-4">
-              {data.info_cards.map((card, idx) => {
-                const Icon = iconMap[card.icon as keyof typeof iconMap] ?? MapPin;
-                const inner = (
-                  <>
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-lavender text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:rotate-[-6deg]">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <div>
-                      <p className="font-heading text-base font-semibold text-primary-dark">{card.title}</p>
-                      {card.lines.map((line) => (
-                        <p key={line} className="text-sm text-muted">
-                          {line}
-                        </p>
-                      ))}
-                    </div>
-                  </>
-                );
-                const cls =
-                  'group flex items-start gap-4 rounded-2xl border border-primary/10 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_20px_40px_-24px_rgba(27,20,96,0.45)]';
-                return (
-                  <motion.div
-                    key={card.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.1, ease }}
+            <h2 className="mt-6 font-serif text-[44px] sm:text-[56px] lg:text-[64px] font-medium leading-[1.02] text-primary-dark">
+              {[data.title_regular, data.title_highlight].map((line, i) => (
+                <span key={line} className="block overflow-hidden pb-1">
+                  <motion.span
+                    initial={{ y: '105%' }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.9, delay: i * 0.12, ease }}
+                    className="block"
                   >
-                    {card.href ? (
-                      <a href={card.href} className={cls}>
-                        {inner}
-                      </a>
-                    ) : (
-                      <div className={cls}>{inner}</div>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
+                    {line}
+                  </motion.span>
+                </span>
+              ))}
+            </h2>
 
-          {/* Form column */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, delay: 0.1, ease }}
-            className="lg:col-span-7"
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="relative rounded-[24px] bg-lavender/70 p-6 sm:p-9 border border-primary/10"
-            >
-              <h3 className="font-heading text-2xl font-semibold text-primary-dark mb-6">{form.title}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-primary-dark">{form.name_label}</span>
-                  <input id="contact-name" name="name" required placeholder={form.name_placeholder} className={inputClass} />
-                </label>
-                <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-primary-dark">{form.email_label}</span>
-                  <input id="contact-email" name="email" type="email" required placeholder={form.email_placeholder} className={inputClass} />
-                </label>
-                <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-primary-dark">{form.phone_label}</span>
-                  <input id="contact-phone" name="phone" type="tel" placeholder={form.phone_placeholder} className={inputClass} />
-                </label>
-                <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-primary-dark">{form.subject_label}</span>
-                  <select id="contact-subject" name="subject" required defaultValue="" className={inputClass}>
-                    <option value="" disabled>
-                      {form.subject_placeholder}
-                    </option>
-                    {form.subject_options.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="block sm:col-span-2">
-                  <span className="mb-2 block text-sm font-medium text-primary-dark">{form.message_label}</span>
+            <p className="mt-5 max-w-xl text-[15px] sm:text-base leading-relaxed text-muted">{data.description}</p>
+
+            <form onSubmit={handleSubmit} className="mt-10 sm:mt-12">
+              <div className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
+                <Field id="contact-name" label={form.name_label}>
+                  <input id="contact-name" name="name" required placeholder={form.name_placeholder} className={fieldClass} />
+                </Field>
+                <Field id="contact-email" label={form.email_label}>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder={form.email_placeholder}
+                    className={fieldClass}
+                  />
+                </Field>
+                <Field id="contact-phone" label={form.phone_label}>
+                  <input
+                    id="contact-phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    maxLength={15}
+                    autoComplete="tel"
+                    placeholder={form.phone_placeholder}
+                    onKeyDown={(e) => {
+                      // Block non-digit characters (allow shortcuts & navigation keys)
+                      if (e.key.length === 1 && !/[0-9]/.test(e.key) && !e.ctrlKey && !e.metaKey) e.preventDefault();
+                    }}
+                    onInput={(e) => {
+                      // Also strips letters/symbols from paste & autofill
+                      const el = e.currentTarget;
+                      el.value = el.value.replace(/\D/g, '');
+                    }}
+                    className={fieldClass}
+                  />
+                </Field>
+                <Field id="contact-subject" label={form.subject_label}>
+                  <input id="contact-subject" name="subject" required placeholder={form.subject_placeholder} className={fieldClass} />
+                </Field>
+                <Field id="contact-message" label={form.message_label} className="sm:col-span-2">
                   <textarea
                     id="contact-message"
                     name="message"
                     required
-                    rows={5}
+                    rows={4}
                     placeholder={form.message_placeholder}
-                    className={`${inputClass} resize-none`}
+                    className={`${fieldClass} resize-y`}
                   />
-                </label>
+                </Field>
               </div>
 
-              <button id="contact-submit" type="submit" className="btn-primary btn-shine mt-6 cursor-pointer">
-                {form.submit_text}
-                <Send className="btn-arrow" aria-hidden="true" />
+              <button
+                id="contact-submit"
+                type="submit"
+                className="group mt-10 inline-flex items-stretch overflow-hidden bg-primary-dark text-white shadow-[0_14px_30px_-16px_rgba(27,20,96,0.8)] transition-shadow duration-300 hover:shadow-[0_20px_40px_-16px_rgba(27,20,96,0.9)] cursor-pointer"
+              >
+                <span className="flex items-center px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.2em]">
+                  {form.submit_text}
+                </span>
+                <span className="flex w-14 items-center justify-center border-l border-white/15 bg-primary transition-colors duration-300 group-hover:bg-primary-light">
+                  <ArrowRight
+                    className="h-[18px] w-[18px] transition-transform duration-300 group-hover:translate-x-1"
+                    strokeWidth={1.8}
+                    aria-hidden="true"
+                  />
+                </span>
               </button>
 
               <AnimatePresence>
@@ -150,7 +169,7 @@ export default function Contact({ data }: ContactProps) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-600"
+                    className="mt-4 flex items-center gap-2 text-sm font-medium text-emerald-600"
                     role="status"
                   >
                     <CircleCheck className="h-4 w-4" />
@@ -160,22 +179,94 @@ export default function Contact({ data }: ContactProps) {
               </AnimatePresence>
             </form>
           </motion.div>
+
+          {/* ── Right: Contact info card ── */}
+          <motion.aside
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, delay: 0.1, ease }}
+            className="relative self-start overflow-hidden bg-gradient-to-b from-primary-dark to-navy px-7 py-9 sm:px-9 sm:py-11 text-white shadow-[0_30px_70px_-30px_rgba(14,11,51,0.7)]"
+          >
+            <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/40 blur-3xl" />
+
+            <h3 className="relative font-serif text-[32px] sm:text-[36px] font-medium leading-none">{data.info_title}</h3>
+
+            <ul className="relative mt-8">
+              {data.info_cards.map((card, idx) => {
+                const Icon = iconMap[card.icon as keyof typeof iconMap] ?? MapPin;
+                const body = (
+                  <>
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 group-hover:bg-white group-hover:text-primary-dark">
+                      <Icon className="h-[18px] w-[18px]" strokeWidth={1.8} />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-[10px] font-medium uppercase tracking-[0.2em] text-white/55">{card.title}</span>
+                      {card.lines.map((line) => (
+                        <span key={line} className="mt-1 block text-[14px] leading-snug text-white break-words">
+                          {line}
+                        </span>
+                      ))}
+                      {card.note && <span className="mt-1.5 block text-[12px] text-white/55">{card.note}</span>}
+                    </span>
+                  </>
+                );
+                return (
+                  <motion.li
+                    key={card.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 + idx * 0.1, ease }}
+                    className="border-b border-white/12 py-6 first:pt-0"
+                  >
+                    {card.href ? (
+                      <a href={card.href} className="group flex items-start gap-4">
+                        {body}
+                      </a>
+                    ) : (
+                      <div className="group flex items-start gap-4">{body}</div>
+                    )}
+                  </motion.li>
+                );
+              })}
+            </ul>
+
+            <div className="relative mt-7">
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/55">{data.follow_title}</p>
+              <div className="mt-4 flex items-center gap-3">
+                {data.socials.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.aria_label}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-primary-dark"
+                  >
+                    <SocialIcon icon={social.icon} className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.aside>
         </div>
 
-        {/* Map */}
+        {/* ── Map ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.8, ease }}
-          className="mt-14 h-[320px] sm:h-[400px] w-full overflow-hidden rounded-[24px] border border-primary/10 shadow-[0_20px_50px_-30px_rgba(27,20,96,0.45)]"
+          className="mt-12 sm:mt-16 h-[260px] sm:h-[320px] lg:h-[360px] w-full overflow-hidden bg-lavender shadow-[0_20px_50px_-30px_rgba(27,20,96,0.45)]"
         >
           <iframe
             title={data.map.title}
             src={data.map.embed_url}
-            className="h-full w-full grayscale-[30%]"
+            className="h-full w-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
           />
         </motion.div>
       </div>

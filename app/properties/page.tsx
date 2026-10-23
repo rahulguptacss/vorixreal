@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function PropertiesPage() {
   const sectionMap: Record<string, React.ReactNode> = {
-    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} />,
+    Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} watermark={pageData.watermark} />,
     Properties: <Properties data={sections.properties} variant="grid" showButton={false} />,
   };
 

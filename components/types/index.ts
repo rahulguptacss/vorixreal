@@ -1,9 +1,12 @@
 import data from '../data/data.json';
 
-export interface LinkType {
+export interface NavItem {
   name: string;
   href: string;
+  children?: NavItem[];
 }
+
+export type LinkType = NavItem;
 
 export interface HeaderData {
   logo: string;
@@ -110,6 +113,22 @@ export interface ServicesSectionData {
   items: ServiceItem[];
 }
 
+export interface WhyChooseUsItem {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface WhyChooseUsSectionData {
+  eyebrow: string;
+  title_regular: string;
+  title_highlight: string;
+  description: string;
+  image: string;
+  image_alt: string;
+  items: WhyChooseUsItem[];
+}
+
 export interface PropertyItem {
   id: string;
   category: string;
@@ -117,6 +136,15 @@ export interface PropertyItem {
   image: string;
   alt: string;
   href: string;
+}
+
+export interface PaginationLabels {
+  label: string;
+  prev_aria_label: string;
+  next_aria_label: string;
+  page_aria_label: string;
+  /** Supports {from}, {to} and {total} placeholders */
+  showing_text?: string;
 }
 
 export interface PropertiesSectionData {
@@ -127,7 +155,14 @@ export interface PropertiesSectionData {
   button_text: string;
   button_link: string;
   view_aria_label?: string;
+  slides_aria_label?: string;
+  slide_aria_label?: string;
   items: PropertyItem[];
+  /** Max items shown in the homepage slider */
+  homepage_count?: number;
+  /** Items per page on the full properties grid */
+  per_page?: number;
+  pagination?: PaginationLabels;
 }
 
 export interface TestimonialItem {
@@ -151,6 +186,9 @@ export interface TestimonialsSectionData {
   more_link: string;
   prev_aria_label: string;
   next_aria_label: string;
+  slides_aria_label?: string;
+  testimonial_aria_label?: string;
+  rating_aria_label?: string;
   items: TestimonialItem[];
 }
 
@@ -175,7 +213,11 @@ export interface BlogSectionData {
   button_link: string;
   read_more_text?: string;
   author_prefix?: string;
+  default_author?: string;
   homepage_count?: number;
+  /** Posts per page on the full blog grid */
+  per_page?: number;
+  pagination?: PaginationLabels;
   posts: BlogPostItem[];
 }
 
@@ -185,15 +227,69 @@ export interface BlogDetailSectionItem {
 }
 
 export interface BlogDetailSectionData {
+  /** Small label above the title, e.g. "Real Estate Insights" */
+  eyebrow: string;
   category: string;
   date: string;
   author: string;
+  read_time: string;
   title: string;
   hero_image: string;
   hero_alt: string;
-  intro: string;
-  quote?: string;
+  intro: string[];
   sections: BlogDetailSectionItem[];
+}
+
+export interface BlogDetailLabels {
+  recent_posts_title: string;
+  recent_posts_count: number;
+}
+
+export interface RecentPostItem {
+  slug: string;
+  title: string;
+  image: string;
+  alt: string;
+  date: string;
+}
+
+export interface PropertyKeyDetail {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+export interface PropertyNearbyItem {
+  icon: string;
+  time: string;
+  place: string;
+}
+
+export interface PropertyDetailData {
+  title: string;
+  location: string;
+  hero_image: string;
+  hero_alt: string;
+  gallery_image: string;
+  gallery_alt: string;
+  overview: string[];
+  key_details: PropertyKeyDetail[];
+  description: string[];
+  features: string[];
+  location_text: string;
+  map: {
+    embed_url: string;
+    link_url: string;
+  };
+  nearby: PropertyNearbyItem[];
+}
+
+export interface PropertyDetailLabels {
+  key_details_title: string;
+  description_title: string;
+  location_title: string;
+  map_link_text: string;
+  map_title_prefix: string;
 }
 
 export interface ContactInfoCard {
@@ -201,11 +297,13 @@ export interface ContactInfoCard {
   icon: string;
   title: string;
   lines: string[];
+  /** Small muted line shown under the main lines, e.g. "We respond within 24 hours" */
+  note?: string;
   href?: string;
 }
 
 export interface ContactFormFields {
-  title: string;
+  title?: string;
   name_label: string;
   name_placeholder: string;
   email_label: string;
@@ -214,7 +312,6 @@ export interface ContactFormFields {
   phone_placeholder: string;
   subject_label: string;
   subject_placeholder: string;
-  subject_options: string[];
   message_label: string;
   message_placeholder: string;
   submit_text: string;
@@ -231,9 +328,67 @@ export interface ContactSectionData {
   title_regular: string;
   title_highlight: string;
   description: string;
+  info_title: string;
   info_cards: ContactInfoCard[];
+  follow_title: string;
+  socials: FooterSocialItem[];
   form: ContactFormFields;
   map: ContactMapData;
+}
+
+export interface EnquiryFeature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface EnquiryFormFields {
+  name_label: string;
+  name_placeholder: string;
+  email_label: string;
+  email_placeholder: string;
+  phone_label: string;
+  phone_placeholder: string;
+  property_type_label: string;
+  property_type_placeholder: string;
+  property_type_options: string[];
+  location_label: string;
+  location_placeholder: string;
+  budget_label: string;
+  budget_placeholder: string;
+  budget_options: string[];
+  message_label: string;
+  message_placeholder: string;
+  submit_text: string;
+  success_message?: string;
+}
+
+export interface EnquirySectionData {
+  eyebrow: string;
+  title_regular: string;
+  title_highlight: string;
+  description: string;
+  image: string;
+  image_alt: string;
+  features: EnquiryFeature[];
+  form: EnquiryFormFields;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  description: string;
+  image: string;
+  alt: string;
+}
+
+export interface TeamSectionData {
+  eyebrow: string;
+  title_regular: string;
+  title_highlight: string;
+  description: string;
+  members: TeamMember[];
 }
 
 export interface PageComponent {
@@ -244,6 +399,8 @@ export interface PageComponent {
 export interface PageMeta {
   title: string;
   pageName: string;
+  /** Large faded word shown behind the breadcrumb title (falls back to pageName) */
+  watermark?: string;
   metadata: {
     title: string;
     description: string;
@@ -267,11 +424,17 @@ export interface SiteSections {
   hero: HeroSectionData;
   about: AboutSectionData;
   services: ServicesSectionData;
+  why_choose_us: WhyChooseUsSectionData;
   properties: PropertiesSectionData;
   testimonials: TestimonialsSectionData;
   blog: BlogSectionData;
+  blog_detail: BlogDetailLabels;
   blog_details: Record<string, BlogDetailSectionData>;
+  property_detail: PropertyDetailLabels;
+  property_details: Record<string, PropertyDetailData>;
   contact: ContactSectionData;
+  enquiry: EnquirySectionData;
+  team: TeamSectionData;
 }
 
 export interface SitePages {
@@ -282,7 +445,10 @@ export interface SitePages {
   properties: PageMeta;
   blog: PageMeta;
   blog_detail: PageMeta;
+  property_detail: PageMeta;
   contact: PageMeta;
+  enquiry: PageMeta;
+  team: PageMeta;
 }
 
 export interface TemplateComponents {

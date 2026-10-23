@@ -4,13 +4,265 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronDown, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { HeaderData } from '../../types';
+import type { HeaderData, NavItem } from '../../types';
 import PrimaryButton from '../../ui/PrimaryButton';
 
 interface HeaderProps {
   data: HeaderData;
+}
+
+/** Desktop Navigation Item — handles standard link, Level 1 dropdown, and Level 2 nested dropdown flyouts */
+function DesktopNavItem({
+  item,
+  active,
+  isActive,
+}: {
+  item: NavItem;
+  active: boolean;
+  isActive: (href: string) => boolean;
+}) {
+  const hasChildren = Boolean(item.children && item.children.length > 0);
+
+  if (!hasChildren) {
+    return (
+      <Link
+        href={item.href}
+        className={`relative px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
+          active ? 'text-primary' : 'text-foreground/75 hover:text-primary'
+        }`}
+      >
+        {item.name}
+        {active && (
+          <motion.span
+            layoutId="nav-active-pill"
+            transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+            className="absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] rounded-full bg-primary"
+          />
+        )}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="group/nav relative inline-block">
+      <Link
+        href={item.href}
+        className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
+          active ? 'text-primary' : 'text-foreground/75 hover:text-primary'
+        }`}
+      >
+        <span>{item.name}</span>
+        <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-hover/nav:rotate-180" />
+        {active && (
+          <motion.span
+            layoutId="nav-active-pill"
+            transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+            className="absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] rounded-full bg-primary"
+          />
+        )}
+      </Link>
+
+      {/* Level 1 Dropdown */}
+      <div className="pointer-events-none absolute left-0 top-full pt-2 opacity-0 translate-y-1.5 transition-all duration-200 group-hover/nav:pointer-events-auto group-hover/nav:opacity-100 group-hover/nav:translate-y-0 focus-within:pointer-events-auto focus-within:opacity-100 focus-within:translate-y-0 z-50">
+        <div className="min-w-[220px] rounded-xl border border-primary/10 bg-white p-2 shadow-[0_16px_36px_-12px_rgba(27,20,96,0.22)] backdrop-blur-md">
+          <ul className="space-y-0.5">
+            {item.children?.map((sub) => {
+              const hasSubChildren = Boolean(sub.children && sub.children.length > 0);
+              const isSubActive = isActive(sub.href);
+
+              if (!hasSubChildren) {
+                return (
+                  <li key={sub.name}>
+                    <Link
+                      href={sub.href}
+                      className={`block rounded-lg px-3.5 py-2 text-[13.5px] font-medium transition-colors ${
+                        isSubActive ? 'bg-lavender text-primary' : 'text-foreground/80 hover:bg-lavender hover:text-primary'
+                      }`}
+                    >
+                      {sub.name}
+                    </Link>
+                  </li>
+                );
+              }
+
+              // Level 2: Nested dropdown flyout (dropdown inside dropdown)
+              return (
+                <li key={sub.name} className="group/sub relative">
+                  <Link
+                    href={sub.href}
+                    className={`flex items-center justify-between rounded-lg px-3.5 py-2 text-[13.5px] font-medium transition-colors ${
+                      isSubActive ? 'bg-lavender text-primary' : 'text-foreground/80 hover:bg-lavender hover:text-primary'
+                    }`}
+                  >
+                    <span>{sub.name}</span>
+                    <ChevronRight className="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-hover/sub:translate-x-0.5" />
+                  </Link>
+
+                  {/* Level 2 Sub-Dropdown Card */}
+                  <div className="pointer-events-none absolute left-full top-0 pl-2 opacity-0 translate-x-1.5 transition-all duration-200 group-hover/sub:pointer-events-auto group-hover/sub:opacity-100 group-hover/sub:translate-x-0 focus-within:pointer-events-auto focus-within:opacity-100 focus-within:translate-x-0 z-50">
+                    <div className="min-w-[200px] rounded-xl border border-primary/10 bg-white p-2 shadow-[0_16px_36px_-12px_rgba(27,20,96,0.25)]">
+                      <ul className="space-y-0.5">
+                        {sub.children?.map((nested) => (
+                          <li key={nested.name}>
+                            <Link
+                              href={nested.href}
+                              className={`block rounded-lg px-3.5 py-2 text-[13px] font-medium transition-colors ${
+                                isActive(nested.href) ? 'bg-lavender text-primary' : 'text-foreground/80 hover:bg-lavender hover:text-primary'
+                              }`}
+                            >
+                              {nested.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Mobile Drawer Nav Item — handles standard link and multi-level accordions */
+function MobileNavItem({
+  item,
+  isActive,
+  onClose,
+}: {
+  item: NavItem;
+  isActive: (href: string) => boolean;
+  onClose: () => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [subExpanded, setSubExpanded] = useState<Record<string, boolean>>({});
+  const hasChildren = Boolean(item.children && item.children.length > 0);
+  const active = isActive(item.href);
+
+  if (!hasChildren) {
+    return (
+      <Link
+        href={item.href}
+        onClick={onClose}
+        className={`group flex items-center justify-between rounded-xl px-4 py-3.5 font-heading text-lg transition-colors ${
+          active ? 'bg-lavender text-primary' : 'text-foreground hover:bg-lavender hover:text-primary'
+        }`}
+      >
+        {item.name}
+        <ArrowUpRight className="h-4 w-4 opacity-40 transition-all group-hover:opacity-100 group-hover:rotate-45" />
+      </Link>
+    );
+  }
+
+  const toggleSub = (name: string) => {
+    setSubExpanded((prev) => ({ ...prev, [name]: !prev[name] }));
+  };
+
+  return (
+    <div className="flex flex-col">
+      <div
+        className={`group flex items-center justify-between rounded-xl px-4 py-3 font-heading text-lg transition-colors ${
+          active ? 'bg-lavender text-primary' : 'text-foreground hover:bg-lavender hover:text-primary'
+        }`}
+      >
+        <Link href={item.href} onClick={onClose} className="flex-1">
+          {item.name}
+        </Link>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setExpanded((prev) => !prev);
+          }}
+          aria-label={`Toggle ${item.name} sub-menu`}
+          aria-expanded={expanded}
+          className="flex h-9 w-9 items-center justify-center rounded-lg text-primary/70 hover:bg-primary/10 cursor-pointer"
+        >
+          <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
+
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.ul
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden pl-4 pr-1 pt-1 pb-2 space-y-1"
+          >
+            {item.children?.map((sub) => {
+              const hasSubChildren = Boolean(sub.children && sub.children.length > 0);
+              const isSubOpen = Boolean(subExpanded[sub.name]);
+
+              if (!hasSubChildren) {
+                return (
+                  <li key={sub.name}>
+                    <Link
+                      href={sub.href}
+                      onClick={onClose}
+                      className="block rounded-lg px-3.5 py-2 text-[15px] font-medium text-foreground/80 hover:bg-lavender hover:text-primary transition-colors"
+                    >
+                      {sub.name}
+                    </Link>
+                  </li>
+                );
+              }
+
+              // Level 2 inside mobile accordion
+              return (
+                <li key={sub.name} className="flex flex-col">
+                  <div className="flex items-center justify-between rounded-lg px-3.5 py-2 text-[15px] font-medium text-foreground/80 hover:bg-lavender hover:text-primary transition-colors">
+                    <Link href={sub.href} onClick={onClose} className="flex-1">
+                      {sub.name}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => toggleSub(sub.name)}
+                      aria-label={`Toggle ${sub.name} nested menu`}
+                      className="p-1 text-primary/70 cursor-pointer"
+                    >
+                      <ChevronDown
+                        className={`h-3.5 w-3.5 transition-transform duration-200 ${isSubOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                  </div>
+                  <AnimatePresence initial={false}>
+                    {isSubOpen && (
+                      <motion.ul
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden pl-4 space-y-0.5"
+                      >
+                        {sub.children?.map((nested) => (
+                          <li key={nested.name}>
+                            <Link
+                              href={nested.href}
+                              onClick={onClose}
+                              className="block rounded-lg px-3 py-1.5 text-[14px] text-muted hover:text-primary transition-colors"
+                            >
+                              {nested.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </li>
+              );
+            })}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }
 
 export default function Header({ data }: HeaderProps) {
@@ -72,29 +324,16 @@ export default function Header({ data }: HeaderProps) {
             </div>
           </Link>
 
-          {/* Desktop navigation */}
+          {/* Desktop navigation with multi-level dropdown support */}
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
-            {data.links.map((link) => {
-              const active = isActive(link.href);
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`relative px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
-                    active ? 'text-primary' : 'text-foreground/75 hover:text-primary'
-                  }`}
-                >
-                  {link.name}
-                  {active && (
-                    <motion.span
-                      layoutId="nav-active-pill"
-                      transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                      className="absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] rounded-full bg-primary"
-                    />
-                  )}
-                </Link>
-              );
-            })}
+            {data.links.map((link) => (
+              <DesktopNavItem
+                key={link.name}
+                item={link}
+                active={isActive(link.href)}
+                isActive={isActive}
+              />
+            ))}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -123,7 +362,7 @@ export default function Header({ data }: HeaderProps) {
       {/* Spacer so fixed header doesn't overlap content */}
       <div aria-hidden="true" className="h-[84px] sm:h-[100px]" />
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer with multi-level accordion support */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -166,16 +405,11 @@ export default function Header({ data }: HeaderProps) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.08 + idx * 0.05, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`group flex items-center justify-between rounded-xl px-4 py-3.5 font-heading text-lg transition-colors ${
-                        isActive(link.href) ? 'bg-lavender text-primary' : 'text-foreground hover:bg-lavender hover:text-primary'
-                      }`}
-                    >
-                      {link.name}
-                      <ArrowUpRight className="h-4 w-4 opacity-40 transition-all group-hover:opacity-100 group-hover:rotate-45" />
-                    </Link>
+                    <MobileNavItem
+                      item={link}
+                      isActive={isActive}
+                      onClose={() => setIsOpen(false)}
+                    />
                   </motion.div>
                 ))}
               </nav>

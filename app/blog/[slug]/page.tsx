@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const detail = sections.blog_details[slug];
   if (!detail) return { title: pageData.metadata.title, description: pageData.metadata.description };
   return {
-    title: `${detail.title} | Vorix Real Estate`,
-    description: detail.intro,
+    title: `${detail.title} | ${common.Header.logo_text} ${common.Header.logo_subtext}`,
+    description: detail.intro[0] ?? pageData.metadata.description,
   };
 }
 
@@ -32,15 +32,35 @@ async function BlogDetailContent({ params }: { params: Params }) {
   const detail = sections.blog_details[slug];
   if (!detail) notFound();
 
+  // Latest posts (excluding the current one) for the "Recent Posts" sidebar
+  const recentPosts = sections.blog.posts
+    .filter((post) => post.slug !== slug)
+    .slice(0, sections.blog_detail.recent_posts_count)
+    .map((post) => ({
+      slug: post.slug,
+      title: post.title,
+      image: post.image,
+      alt: post.alt,
+      date: sections.blog_details[post.slug]?.date ?? post.date,
+    }));
+
   const sectionMap: Record<string, React.ReactNode> = {
     Breadcrumb: (
       <Breadcrumb
         data={sections.breadcrumb}
         currentPage={pageData.pageName}
+        watermark={pageData.watermark}
         items={[...sections.breadcrumb.items, { name: pages.blog.pageName, href: '/blog' }, { name: pageData.pageName, href: '' }]}
       />
     ),
-    BlogDetail: <BlogDetail data={detail} />,
+    BlogDetail: (
+      <BlogDetail
+        data={detail}
+        labels={sections.blog_detail}
+        recentPosts={recentPosts}
+        authorPrefix={sections.blog.author_prefix}
+      />
+    ),
   };
 
   return (
@@ -54,11 +74,17 @@ async function BlogDetailContent({ params }: { params: Params }) {
 
 function BlogDetailFallback() {
   return (
-    <div className="max-w-4xl mx-auto px-5 sm:px-8 py-16 animate-pulse">
-      <div className="h-[240px] sm:h-[300px] rounded-[24px] bg-lavender mb-10" />
-      <div className="h-8 w-3/4 rounded bg-lavender mb-4" />
-      <div className="h-4 w-full rounded bg-lavender mb-2" />
-      <div className="h-4 w-5/6 rounded bg-lavender" />
+    <div className="animate-pulse">
+      <div className="h-[300px] sm:h-[380px] lg:h-[440px] w-full bg-lavender" />
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid gap-12 lg:grid-cols-[1fr_300px]">
+        <div>
+          <div className="h-10 w-3/4 rounded bg-lavender mb-6" />
+          <div className="aspect-[13/5] w-full bg-lavender mb-6" />
+          <div className="h-4 w-full rounded bg-lavender mb-2" />
+          <div className="h-4 w-5/6 rounded bg-lavender" />
+        </div>
+        <div className="h-80 bg-lavender" />
+      </div>
     </div>
   );
 }

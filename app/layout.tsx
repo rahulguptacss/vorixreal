@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Outfit, Inter } from 'next/font/google';
+import { Outfit, Inter, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 import { pages, common } from '../components/types';
 
@@ -17,6 +17,13 @@ const inter = Inter({
   display: 'swap',
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: '--font-cormorant',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: pages.home.metadata.title,
   description: pages.home.metadata.description,
@@ -30,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${outfit.variable} ${inter.variable} h-full antialiased`}
+      className={`${outfit.variable} ${inter.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans bg-white text-foreground selection:bg-primary selection:text-white">
         {children}

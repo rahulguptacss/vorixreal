@@ -20,7 +20,7 @@ export default function Hero({ data }: HeroProps) {
   const imageY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
 
   return (
-    <section id="home" className="relative w-full bg-white pt-6 sm:pt-10 pb-12 sm:pb-16 overflow-hidden">
+    <section id="home" className="relative w-full bg-white pt-6 sm:pt-10 pb-6 sm:pb-8 overflow-hidden">
       {/* Soft ambient glow */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[620px] rounded-full bg-primary/[0.06] blur-3xl" />
 
