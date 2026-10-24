@@ -29,17 +29,19 @@ function DesktopNavItem({
     return (
       <Link
         href={item.href}
-        className={`relative px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
+        className={`group/nav relative px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
           active ? 'text-primary' : 'text-foreground/75 hover:text-primary'
         }`}
       >
-        {item.name}
-        {active && (
+        <span>{item.name}</span>
+        {active ? (
           <motion.span
             layoutId="nav-active-pill"
             transition={{ type: 'spring', stiffness: 380, damping: 32 }}
             className="absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] rounded-full bg-primary"
           />
+        ) : (
+          <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] rounded-full bg-primary scale-x-0 transition-transform duration-300 ease-out origin-center group-hover/nav:scale-x-100" />
         )}
       </Link>
     );
@@ -49,18 +51,20 @@ function DesktopNavItem({
     <div className="group/nav relative inline-block">
       <Link
         href={item.href}
-        className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
+        className={`relative inline-flex items-center gap-1.5 px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
           active ? 'text-primary' : 'text-foreground/75 hover:text-primary'
         }`}
       >
         <span>{item.name}</span>
         <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-hover/nav:rotate-180" />
-        {active && (
+        {active ? (
           <motion.span
             layoutId="nav-active-pill"
             transition={{ type: 'spring', stiffness: 380, damping: 32 }}
             className="absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] rounded-full bg-primary"
           />
+        ) : (
+          <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] rounded-full bg-primary scale-x-0 transition-transform duration-300 ease-out origin-center group-hover/nav:scale-x-100" />
         )}
       </Link>
 

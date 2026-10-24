@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const sectionMap: Record<string, React.ReactNode> = {
     Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} watermark={pageData.watermark} />,
-    About: <About data={sections.about} showButton={false} showTags={false} />,
+    About: <About data={sections.about} showButton={false} />,
     WhyChooseUs: <WhyChooseUs data={sections.why_choose_us} />,
     Services: <Services data={sections.services} />,
   };

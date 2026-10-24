@@ -11,13 +11,11 @@ interface AboutProps {
   data: AboutSectionData;
   /** Show the "Learn More" CTA (hidden on the About page itself) */
   showButton?: boolean;
-  /** Show the tag strip over the interior image */
-  showTags?: boolean;
 }
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export default function About({ data, showButton = true, showTags = true }: AboutProps) {
+export default function About({ data, showButton = true }: AboutProps) {
   return (
     <section id="about" className="relative w-full bg-white pt-6 sm:pt-10 pb-14 sm:pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -139,22 +137,6 @@ export default function About({ data, showButton = true, showTags = true }: Abou
                     sizes="(max-width: 768px) 100vw, 460px"
                     className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                   />
-                  {showTags && data.tags && data.tags.length > 0 && (
-                    <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-center gap-2 bg-primary-dark/85 px-3 py-3">
-                      {data.tags.map((tag, i) => (
-                        <motion.span
-                          key={tag}
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: 0.5 + i * 0.08, ease }}
-                          className="rounded-md border border-white/60 px-3 py-1 text-xs text-white transition-colors duration-300 hover:bg-white hover:text-primary-dark"
-                        >
-                          {tag}
-                        </motion.span>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </motion.div>
             </div>
