@@ -73,9 +73,9 @@ export default function About({ data, showButton = true, showTags = true }: Abou
               ))}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 xl:gap-16 flex-1">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-12 xl:gap-14 flex-1 items-start">
               {/* Stats — numbers count up when scrolled into view */}
-              <div className="flex flex-col gap-7 sm:gap-9">
+              <div className="w-full md:w-[210px] lg:w-[230px] shrink-0 grid grid-cols-3 divide-x divide-primary/15 md:divide-x-0 md:flex md:flex-col gap-2 sm:gap-4 md:gap-9 py-5 sm:py-6 md:py-0 border-y border-primary/10 md:border-y-0 my-2 md:my-0">
                 {data.stats.map((stat, idx) => (
                   <motion.div
                     key={stat.label}
@@ -83,8 +83,9 @@ export default function About({ data, showButton = true, showTags = true }: Abou
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-40px' }}
                     transition={{ duration: 0.7, delay: idx * 0.15, ease }}
+                    className="flex flex-col items-center text-center px-1.5 sm:px-3 md:px-0 md:items-start md:text-left"
                   >
-                    <p className="font-heading text-[56px] sm:text-[64px] font-bold leading-none tracking-tight text-primary-dark">
+                    <p className="font-heading text-3xl sm:text-4xl md:text-[52px] xl:text-[58px] font-bold leading-none tracking-tight text-primary-dark">
                       <Counter
                         value={stat.value}
                         duration={2.2}
@@ -92,12 +93,12 @@ export default function About({ data, showButton = true, showTags = true }: Abou
                         suffixClassName="ml-0.5 align-top text-[0.62em] font-medium leading-none relative top-[0.12em]"
                       />
                     </p>
-                    <p className="mt-3 text-xs sm:text-[13px] font-medium uppercase tracking-[0.28em] text-primary-dark/80">
+                    <p className="mt-2 md:mt-3 text-[10px] sm:text-xs md:text-[13px] font-medium uppercase tracking-wider md:tracking-[0.28em] text-primary-dark/80 leading-tight">
                       {stat.label}
                     </p>
 
-                    {/* Divider: thin line + short indigo accent that grows in */}
-                    <div className="relative mt-6 h-px w-full max-w-[260px] bg-primary/15">
+                    {/* Divider: hidden on mobile, visible on desktop */}
+                    <div className="hidden md:block relative mt-6 h-px w-full max-w-[210px] bg-primary/15">
                       <motion.span
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
@@ -110,32 +111,32 @@ export default function About({ data, showButton = true, showTags = true }: Abou
                 ))}
               </div>
 
-              {/* Copy + CTA + interior image with tags */}
+              {/* Copy + CTA + interior image with tags — shifted left */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.9, delay: 0.15, ease }}
-                className="flex flex-col"
+                className="flex flex-col flex-1 w-full max-w-xl"
               >
-                <div className={`space-y-4 text-[15px] sm:text-base leading-relaxed text-muted ${showButton ? 'mb-7' : 'mb-10'}`}>
+                <div className={`space-y-4 text-[15px] sm:text-base leading-relaxed text-muted ${showButton ? 'mb-7' : 'mb-8'}`}>
                   {data.description_paragraphs.map((para) => (
                     <p key={para}>{para}</p>
                   ))}
                 </div>
 
                 {showButton && (
-                  <div className="mb-10">
+                  <div className="mb-8">
                     <PrimaryButton href={data.button_link} text={data.button_text} className="px-5 py-3 text-sm" />
                   </div>
                 )}
 
-                <div className="group relative mt-auto w-full aspect-[4/3] overflow-hidden rounded-[4px] bg-lavender">
+                <div className="group relative w-full max-w-[460px] aspect-[4/3] overflow-hidden rounded-[4px] bg-lavender">
                   <Image
                     src={data.image_secondary}
                     alt={data.image_secondary_alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 360px"
+                    sizes="(max-width: 768px) 100vw, 460px"
                     className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                   />
                   {showTags && data.tags && data.tags.length > 0 && (

@@ -3,8 +3,6 @@ import type { Metadata } from 'next';
 import Header from '../../components/sections/Header';
 import Breadcrumb from '../../components/sections/Breadcrumb';
 import Services from '../../components/sections/Services';
-import Properties from '../../components/sections/Properties';
-import Testimonials from '../../components/sections/Testimonials';
 import Footer from '../../components/sections/Footer';
 import BackToTop from '../../components/ui/BackToTop';
 import { common, pages, sections, type PageComponent } from '../../components/types';
@@ -20,8 +18,6 @@ export default function ServicesPage() {
   const sectionMap: Record<string, React.ReactNode> = {
     Breadcrumb: <Breadcrumb data={sections.breadcrumb} currentPage={pageData.pageName} watermark={pageData.watermark} />,
     Services: <Services data={sections.services} />,
-    Properties: <Properties data={sections.properties} variant="slider" />,
-    Testimonials: <Testimonials data={sections.testimonials} />,
   };
 
   return (

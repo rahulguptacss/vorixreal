@@ -219,10 +219,6 @@
                 {
                   "key": "WhyChooseUsSection",
                   "component": "WhyChooseUs"
-                },
-                {
-                  "key": "TestimonialsSection",
-                  "component": "Testimonials"
                 }
               ]
             },
@@ -242,14 +238,6 @@
                 {
                   "key": "ServicesSection",
                   "component": "Services"
-                },
-                {
-                  "key": "PropertiesSection",
-                  "component": "Properties"
-                },
-                {
-                  "key": "TestimonialsSection",
-                  "component": "Testimonials"
                 }
               ]
             },
@@ -646,7 +634,8 @@
                 "gallery_alt": "Villa terrace with infinity pool overlooking the Dubai skyline at sunset",
                 "overview": [
                   "This exceptional villa combines contemporary architecture with refined interiors, offering an unparalleled living experience. Designed for those who seek privacy, elegance, and modern comfort, the property features expansive indoor and outdoor spaces with breathtaking views of the city skyline.",
-                  "Every detail has been thoughtfully crafted, from premium finishes to seamless open-plan living areas, making it an ideal residence for families or a valuable investment in one of the most sought-after locations."
+                  "Every detail has been thoughtfully crafted, from premium finishes to seamless open-plan living areas, making it an ideal residence for families or a valuable investment in one of the most sought-after locations.",
+                  "Surrounded by manicured private gardens and illuminated outdoor terraces, the residence delivers effortless everyday luxury with complete privacy and tranquility."
                 ],
                 "key_details": [
                   {
@@ -738,7 +727,8 @@
                 "gallery_alt": "Aurora Residences living room with skyline view",
                 "overview": [
                   "The Aurora Residences bring boutique luxury to one of London's most prestigious neighbourhoods. Crafted with natural stone, warm timber and generous glazing, each residence balances timeless character with contemporary comfort.",
-                  "Thoughtful layouts, concierge services and beautifully landscaped communal gardens make this an exceptional home for professionals and families alike."
+                  "Thoughtful layouts, concierge services and beautifully landscaped communal gardens make this an exceptional home for professionals and families alike.",
+                  "Featuring bespoke interior finishes, 24/7 concierge assistance, and private wellness facilities, the residence represents prime city living at its finest."
                 ],
                 "key_details": [
                   {
@@ -830,7 +820,8 @@
                 "gallery_alt": "Glass and concrete architecture reflected in a pool",
                 "overview": [
                   "Meridian Corporate Tower is a Class-A office building offering flexible floor plates, abundant natural light and a striking glass facade in the heart of Midtown Manhattan.",
-                  "Designed for forward-thinking businesses, the tower combines wellness-focused amenities with cutting-edge infrastructure to create a workplace that attracts and retains top talent."
+                  "Designed for forward-thinking businesses, the tower combines wellness-focused amenities with cutting-edge infrastructure to create a workplace that attracts and retains top talent.",
+                  "Equipped with advanced air filtration, high-speed fiber connectivity, and dedicated executive meeting suites, the building is tailored for modern corporate excellence."
                 ],
                 "key_details": [
                   {
@@ -917,7 +908,8 @@
                 "gallery_alt": "Villa pool terrace at sunset",
                 "overview": [
                   "Azure Waterfront Villa is a statement residence on Miami's coveted waterfront, pairing sculptural architecture with resort-style outdoor living and uninterrupted bay views.",
-                  "Wide glass walls open the interiors to the pool deck and private dock, creating a seamless connection between home, garden and water."
+                  "Wide glass walls open the interiors to the pool deck and private dock, creating a seamless connection between home, garden and water.",
+                  "Boasting a private deep-water yacht dock, resort-style infinity pool, and lush palm surroundings, the estate offers an unmatched waterfront retreat."
                 ],
                 "key_details": [
                   {
@@ -1009,7 +1001,8 @@
                 "gallery_alt": "Bright open-plan family living room",
                 "overview": [
                   "Maple Grove Family Residence is a three-storey modern home designed around family life, with generous living spaces, a private garden and a quiet, tree-lined setting.",
-                  "Clean architectural lines, warm materials and abundant natural light create a welcoming home that grows with your family."
+                  "Clean architectural lines, warm materials and abundant natural light create a welcoming home that grows with your family.",
+                  "With an energy-efficient layout, private fenced backyard, and proximity to top-ranked neighborhood schools, this home offers lasting comfort for the entire family."
                 ],
                 "key_details": [
                   {
@@ -1101,7 +1094,8 @@
                 "gallery_alt": "White retreat villa with pool at golden hour",
                 "overview": [
                   "Serenity Cliffside Retreat is a minimalist holiday villa perched above the Indian Ocean, designed for slow mornings, sunset swims and complete privacy.",
-                  "With strong rental demand and a turnkey furnished interior, it's equally suited as a personal escape or a high-yield holiday investment."
+                  "With strong rental demand and a turnkey furnished interior, it's equally suited as a personal escape or a high-yield holiday investment.",
+                  "Complete with an ocean-view infinity pool, dedicated yoga pavilion, and turnkey designer furnishings, this sanctuary offers the ultimate island lifestyle."
                 ],
                 "key_details": [
                   {

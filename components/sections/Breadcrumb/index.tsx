@@ -24,7 +24,7 @@ export default function Breadcrumb({ data, currentPage, watermark, items }: Brea
   const bgWord = watermark ?? currentPage;
 
   return (
-    <section className="relative w-full h-[300px] sm:h-[380px] lg:h-[440px] overflow-hidden bg-navy">
+    <section className="relative w-full h-[210px] sm:h-[300px] lg:h-[420px] overflow-hidden bg-navy">
       <motion.div
         initial={{ scale: 1.12 }}
         animate={{ scale: 1 }}
@@ -48,12 +48,12 @@ export default function Breadcrumb({ data, currentPage, watermark, items }: Brea
         </motion.span>
       )}
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center pt-8 sm:pt-10 lg:pt-8 px-5 sm:px-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease }}
-          className="font-serif text-4xl sm:text-5xl lg:text-[64px] font-medium tracking-tight text-white drop-shadow-[0_4px_24px_rgba(14,11,51,0.45)]"
+          className="font-serif text-3xl sm:text-5xl lg:text-[64px] font-medium tracking-tight text-white drop-shadow-[0_4px_24px_rgba(14,11,51,0.45)]"
         >
           {currentPage}
         </motion.h1>
@@ -62,7 +62,7 @@ export default function Breadcrumb({ data, currentPage, watermark, items }: Brea
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease }}
-          className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-[0.2em] text-white/75"
+          className="mt-2.5 sm:mt-4 inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-sm uppercase tracking-[0.16em] sm:tracking-[0.2em] text-white/75"
         >
           {trail.map((item, idx) => {
             const last = idx === trail.length - 1;

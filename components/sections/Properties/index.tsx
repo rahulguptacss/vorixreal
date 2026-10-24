@@ -32,7 +32,7 @@ function PropertyCard({ item, ariaLabel, priority = false }: { item: PropertyIte
         alt={item.alt}
         fill
         priority={priority}
-        sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 400px"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
         className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
       />
 
@@ -201,7 +201,9 @@ export default function Properties({ data, variant = 'slider', showButton = true
               onPointerUp={endDrag}
               onPointerCancel={endDrag}
               onPointerLeave={endDrag}
-              className="no-scrollbar -mx-1.5 flex snap-x snap-mandatory overflow-x-auto"
+              onTouchStart={startDrag}
+              onTouchEnd={endDrag}
+              className="no-scrollbar -mx-1.5 flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
             >
               {sliderItems.map((item, idx) => (
                 <motion.div
@@ -210,7 +212,7 @@ export default function Properties({ data, variant = 'slider', showButton = true
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: (idx % 3) * 0.12, ease }}
-                  className="snap-start shrink-0 basis-[85%] sm:basis-1/2 lg:basis-1/3 px-1.5"
+                  className="snap-start shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 px-1.5"
                 >
                   <PropertyCard item={item} ariaLabel={viewLabel} priority={idx < 3} />
                 </motion.div>
@@ -218,7 +220,7 @@ export default function Properties({ data, variant = 'slider', showButton = true
             </div>
 
             {/* Pagination dots */}
-            <div className="mt-8 flex items-center justify-center gap-2.5" role="tablist" aria-label={slidesAriaLabel}>
+            <div className="mt-8 flex items-center justify-center gap-2" role="tablist" aria-label={slidesAriaLabel}>
               {Array.from({ length: steps }, (_, i) => (
                 <button
                   key={i}
@@ -227,10 +229,10 @@ export default function Properties({ data, variant = 'slider', showButton = true
                   onClick={() => handleDot(i)}
                   aria-label={`${slideAriaLabel} ${i + 1}`}
                   aria-selected={active === i}
-                  className="flex h-4 items-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 cursor-pointer"
+                  className="flex h-6 w-6 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 cursor-pointer"
                 >
                   <motion.span
-                    animate={{ width: active === i ? 20 : 10 }}
+                    animate={{ width: active === i ? 22 : 8 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     className={`block h-[7px] rounded-full transition-colors duration-300 ${
                       active === i ? 'bg-primary' : 'bg-primary/20 hover:bg-primary/40'

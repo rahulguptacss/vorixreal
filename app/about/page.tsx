@@ -5,7 +5,6 @@ import Breadcrumb from '../../components/sections/Breadcrumb';
 import About from '../../components/sections/About';
 import WhyChooseUs from '../../components/sections/WhyChooseUs';
 import Services from '../../components/sections/Services';
-import Testimonials from '../../components/sections/Testimonials';
 import Footer from '../../components/sections/Footer';
 import BackToTop from '../../components/ui/BackToTop';
 import { common, pages, sections, type PageComponent } from '../../components/types';
@@ -23,7 +22,6 @@ export default function AboutPage() {
     About: <About data={sections.about} showButton={false} showTags={false} />,
     WhyChooseUs: <WhyChooseUs data={sections.why_choose_us} />,
     Services: <Services data={sections.services} />,
-    Testimonials: <Testimonials data={sections.testimonials} />,
   };
 
   return (

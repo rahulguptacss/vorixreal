@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import type { TestimonialsSectionData } from '../../types';
@@ -63,16 +62,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
             transition={{ duration: 0.8, delay: 0.15, ease }}
             className="order-2 lg:order-1 flex flex-col items-start lg:items-end justify-center lg:text-right lg:pr-12 lg:border-r border-primary/15"
           >
-            <p className="max-w-md text-[15px] sm:text-base leading-relaxed text-muted mb-5">{data.intro}</p>
-            <Link
-              href={data.more_link}
-              className="group inline-flex items-center gap-4 text-xs sm:text-[13px] font-medium uppercase tracking-[0.22em] text-primary-dark"
-            >
-              {data.more_text}
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-dark text-white transition-transform duration-300 group-hover:translate-x-1">
-                <ArrowRight className="h-4 w-4" strokeWidth={2} />
-              </span>
-            </Link>
+            <p className="max-w-md text-[15px] sm:text-base leading-relaxed text-muted">{data.intro}</p>
           </motion.div>
 
           <div className="order-1 lg:order-2 lg:pl-12">

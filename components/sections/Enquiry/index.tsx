@@ -4,7 +4,6 @@ import { useState, type FormEvent, type KeyboardEvent, type ReactNode } from 're
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  ArrowRight,
   CircleCheck,
   Headset,
   House,
@@ -19,6 +18,7 @@ import {
 } from 'lucide-react';
 import type { EnquirySectionData } from '../../types';
 import Select from '../../ui/Select';
+import PrimaryButton from '../../ui/PrimaryButton';
 
 interface EnquiryProps {
   data: EnquirySectionData;
@@ -213,22 +213,13 @@ export default function Enquiry({ data }: EnquiryProps) {
                 </Field>
               </div>
 
-              <button
-                id="enquiry-submit"
-                type="submit"
-                className="group mt-8 inline-flex items-stretch overflow-hidden bg-primary-dark text-white shadow-[0_14px_30px_-16px_rgba(27,20,96,0.8)] transition-shadow duration-300 hover:shadow-[0_20px_40px_-16px_rgba(27,20,96,0.9)] cursor-pointer"
-              >
-                <span className="flex items-center px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.2em]">
-                  {form.submit_text}
-                </span>
-                <span className="flex w-14 items-center justify-center border-l border-white/15 bg-primary transition-colors duration-300 group-hover:bg-primary-light">
-                  <ArrowRight
-                    className="h-[18px] w-[18px] transition-transform duration-300 group-hover:translate-x-1"
-                    strokeWidth={1.8}
-                    aria-hidden="true"
-                  />
-                </span>
-              </button>
+              <div className="mt-8">
+                <PrimaryButton
+                  type="submit"
+                  id="enquiry-submit"
+                  text={form.submit_text}
+                />
+              </div>
 
               <AnimatePresence>
                 {submitted && form.success_message && (
